@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "mysticalflames:tarragon_chestplate"
+  },
+  "addition": {
+    "item": "mysticalflames:mystery_scale"
+  },
+  "result": {
+    "item": "mysticalflames:scalemail_chestplate"
+  }
+}

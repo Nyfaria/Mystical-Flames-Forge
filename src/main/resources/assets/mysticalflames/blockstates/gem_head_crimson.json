@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model":  "mysticalflames:block/gem_head_crimson" },
+    "facing=east": { "model":  "mysticalflames:block/gem_head_crimson", "y":  90 },
+    "facing=south": { "model":  "mysticalflames:block/gem_head_crimson", "y" : 180 },
+    "facing=west": { "model": "mysticalflames:block/gem_head_crimson", "y": 270 }
+  }
+}

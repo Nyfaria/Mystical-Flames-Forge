@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="[39,)"
+license="All Rights Reserved to Lightworks Studios"
+issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/"
+
+[[mods]]
+modId="mysticalflames"
+version="0.0.8.9"
+displayName="Mystical Flames"
+#updateJSONURL=""
+displayURL="https://sites.google.com/view/mystical-flames-official/home"
+logoFile="logo.png"
+credits="This mod wouldn't have been possible without our amazing Patreon Supporters, without them this mod wouldn't have started, or been able to progress"
+authors="Ersh Gem, Dan, MidnightPony, Derpy, ShadowRogueG, BloodViper2020, JurassicAlien, LemmaEOF, Aurum, MidnightPony, FuriadaNoite, Shinyju, Pharosite" #optional
+description='''
+Mystical Flames is a Minecraft mod, which aims to add a wide variety of dragons, and other mythical creatures to the game'''
+
+[[dependencies.mysticalflames]]
+    modId="forge"
+    mandatory=true
+    versionRange="[39,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.mysticalflames]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.1,1.19)"
+    ordering="NONE"
+    side="BOTH"

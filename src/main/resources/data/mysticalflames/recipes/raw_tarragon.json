@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01"
+  ],
+  "key": {
+    "0": {
+      "item": "mysticalflames:bonesteel_ingot"
+    },
+    "1": {
+      "item": "minecraft:dragon_breath"
+    }
+  },
+  "result": {
+    "item": "mysticalflames:raw_tarragon",
+    "count": 1
+  }
+}

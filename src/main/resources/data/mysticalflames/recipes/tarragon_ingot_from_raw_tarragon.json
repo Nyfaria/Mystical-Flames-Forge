@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "group": "",
+  "ingredient": {
+    "item": "mysticalflames:raw_tarragon"
+  },
+  "result": "mysticalflames:tarragon_ingot",
+  "experience": 0.30,
+  "cookingtime": 400
+}

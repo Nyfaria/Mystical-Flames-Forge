@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "mysticalflames:phoenix_nest",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 4577246782,
+
+    "spacing": 30,
+
+    "separation": 15,
+
+    "type": "minecraft:random_spread"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23"
+  ],
+  "key": {
+    "0": {
+      "item": "mysticalflames:burnt_planks"
+    },
+    "1": {
+      "item": "mysticalflames:burnt_planks"
+    },
+    "2": {
+      "item": "mysticalflames:burnt_planks"
+    },
+    "3": {
+      "item": "mysticalflames:burnt_planks"
+    }
+  },
+  "result": {
+    "item": "minecraft:crafting_table",
+    "count": 1
+  }
+}

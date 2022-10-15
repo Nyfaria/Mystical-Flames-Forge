@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "mysticalflames:block/dead_grass_top",
+    "down": "mysticalflames:block/dirt",
+    "up": "mysticalflames:block/dead_grass_top",
+    "north": "mysticalflames:block/dead_grass_side",
+    "east": "mysticalflames:block/dead_grass_side",
+    "south": "mysticalflames:block/dead_grass_side",
+    "west": "mysticalflames:block/dead_grass_side"
+  }
+}

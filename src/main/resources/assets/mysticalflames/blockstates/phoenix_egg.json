@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model":  "mysticalflames:block/phoenix_egg" },
+    "facing=east": { "model":  "mysticalflames:block/phoenix_egg", "y":  90 },
+    "facing=south": { "model":  "mysticalflames:block/phoenix_egg", "y" : 180 },
+    "facing=west": { "model": "mysticalflames:block/phoenix_egg", "y": 270 }
+  }
+}

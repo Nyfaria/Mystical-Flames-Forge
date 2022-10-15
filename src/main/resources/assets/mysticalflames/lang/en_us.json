@@ -1,0 +1,116 @@
+{
+  "item.mysticalflames.bonesteel_ingot": "Bonesteel Ingot",
+  "item.mysticalflames.bonesteel_nugget": "Bonesteel Nugget",
+  "item.mysticalflames.raw_bonesteel": "Raw Bonesteel",
+  "item.mysticalflames.bonesteel_sword": "Bonesteel Sword",
+  "item.mysticalflames.bonesteel_pickaxe": "Bonesteel Pickaxe",
+  "item.mysticalflames.bonesteel_axe": "Bonesteel Axe",
+  "item.mysticalflames.bonesteel_shovel": "Bonesteel Shovel",
+  "item.mysticalflames.bonesteel_hoe": "Bonesteel Hoe",
+  "item.mysticalflames.bonesteel_helmet": "Bonesteel Helmet",
+  "item.mysticalflames.bonesteel_chestplate": "Bonesteel Chestplate",
+  "item.mysticalflames.bonesteel_leggings": "Bonesteel Leggings",
+  "item.mysticalflames.bonesteel_boots": "Bonesteel Boots",
+
+
+  "item.mysticalflames.hunter_sword": "Hunter Sword",
+
+  "item.mysticalflames.raw_tarragon": "Raw Tarragon",
+  "item.mysticalflames.tarragon_ingot": "Tarragon Ingot",
+  "item.mysticalflames.tarragon_helmet": "Tarragon Helmet",
+  "item.mysticalflames.tarragon_chestplate": "Tarragon Chestplate",
+  "item.mysticalflames.tarragon_leggings": "Tarragon Leggings",
+  "item.mysticalflames.tarragon_boots": "Tarragon Boots",
+  "item.mysticalflames.tarragon_sword": "Tarragon Sword",
+  "item.mysticalflames.tarragon_pickaxe": "Tarragon Pickaxe",
+  "item.mysticalflames.tarragon_axe": "Tarragon Axe",
+  "item.mysticalflames.tarragon_shovel": "Tarragon Shovel",
+  "item.mysticalflames.tarragon_hoe": "Tarragon Hoe",
+
+  "item.mysticalflames.scalemail_helmet": "Scalemail Helmet",
+  "item.mysticalflames.scalemail_chestplate": "Scalemail Chestplate",
+  "item.mysticalflames.scalemail_leggings": "Scalemail Leggings",
+  "item.mysticalflames.scalemail_boots": "Scalemail Boots",
+  "item.mysticalflames.scalemail_sword": "Scalemail Sword",
+  "item.mysticalflames.scalemail_pickaxe": "Scalemail Pickaxe",
+  "item.mysticalflames.scalemail_axe": "Scalemail Axe",
+  "item.mysticalflames.scalemail_shovel": "Scalemail Shovel",
+  "item.mysticalflames.scalemail_hoe": "Scalemail Hoe",
+
+  "item.mysticalflames.pin": "Pin",
+
+  "item.mysticalflames.dragon_flesh": "Dragon Flesh",
+
+  "item.mysticalflames.green_crystal": "Green Crystal",
+  "item.mysticalflames.red_crystal": "Red Crystal",
+  "item.mysticalflames.blue_crystal": "Blue Crystal",
+
+  "block.mysticalflames.bonesteel_block": "Block of Bonesteel",
+  "block.mysticalflames.raw_bonesteel_block": "Block of Raw Bonesteel",
+
+  "block.mysticalflames.scale_ore": "Fossilized Scale Ore",
+  "block.mysticalflames.dead_grass": "Dead Grass Block",
+  "block.mysticalflames.burnt_log": "Burnt Log",
+  "block.mysticalflames.burnt_planks": "Burnt Planks",
+
+  "item.mysticalflames.gem_scale": "Gem Scale",
+  "item.mysticalflames.dramon_scale": "Dramon Scale",
+  "item.mysticalflames.phoenix_feather": "Phoenix Feather",
+  "item.mysticalflames.mystery_scale": "Mysterious Scale",
+  "item.mysticalflames.hydroptera_scale": "Hydroptera Scale",
+  "item.mysticalflames.kelptolux_scale": "Kelptolux Scale",
+  "item.mysticalflames.eternal_flame_scale": "Eternal Flame Scale",
+  "item.mysticalflames.queens_crown_scale": "Queen's Crown Scale",
+
+  "block.mysticalflames.gem_egg": "Gem Egg",
+  "block.mysticalflames.dramon_egg": "Dramon Egg",
+  "block.mysticalflames.puppet_egg": "Puppet Egg",
+  "block.mysticalflames.hydroptera_egg": "Hydroptera Egg",
+  "block.mysticalflames.phoenix_egg": "Phoenix Egg",
+  "block.mysticalflames.queens_crown_egg": "Queen's Crown Egg",
+  "block.mysticalflames.kelptolux_egg": "Kelptolux Egg",
+  "block.mysticalflames.lycan_egg": "Lycan Egg",
+  "block.mysticalflames.eternal_flame_egg": "Eternal Flame Egg",
+
+  "block.mysticalflames.gem_head_birch": "Gem Head Birch",
+  "block.mysticalflames.gem_head_oak": "Gem Head Oak",
+  "block.mysticalflames.gem_head_dark_oak": "Gem Head Dark Oak",
+  "block.mysticalflames.gem_head_acacia": "Gem Head Acacia",
+  "block.mysticalflames.gem_head_jungle": "Gem Head Jungle",
+  "block.mysticalflames.gem_head_spruce": "Gem Head Spruce",
+  "block.mysticalflames.gem_head_warped": "Gem Head Warped",
+  "block.mysticalflames.gem_head_crimson": "Gem Head Crimson",
+
+  "itemGroup.mysticalflamesitems": "Mystical Flames | Items",
+  "itemGroup.mysticalflamestools": "Mystical Flames | Tools",
+  "itemGroup.mysticalflamesarmor": "Mystical Flames | Armor",
+  "itemGroup.mysticalflamesblocks": "Mystical Flames | Blocks",
+  "itemGroup.mysticalflameseggs": "Mystical Flames | Dragon Eggs",
+  "itemGroup.mysticalflamesscales": "Mystical Flames | Dragon Scales",
+  "itemGroup.mysticalflamesspawneggs": "Mystical Flames | Spawn Eggs",
+  "itemGroup.mysticalflamesdeco": "Mystical Flames | Decoration",
+
+  "item.mysticalflames.gem_spawn_egg": "Spawn Gem Dragon",
+  "item.mysticalflames.hydroptera_spawn_egg": "Spawn Hydroptera Dragon",
+  "item.mysticalflames.phoenix_spawn_egg": "Spawn Phoenix Dragon",
+  "item.mysticalflames.queens_crown_spawn_egg": "Spawn Queen's Crown Dragon",
+  "item.mysticalflames.lycan_spawn_egg": "Spawn Lycan Dragon",
+  "item.mysticalflames.kelptolux_spawn_egg": "Spawn Kelptolux Dragon",
+
+  "entity.mysticalflames.gem_dragon": "Gem Dragon",
+  "entity.mysticalflames.hydroptera": "Hydroptera",
+  "entity.mysticalflames.phoenix": "Phoenix",
+  "entity.mysticalflames.queens_crown": "Queen's Crown",
+  "entity.mysticalflames.lycan": "Lycan",
+  "entity.mysticalflames.kelptolux": "Kelptolux",
+
+  "item.mysticalflames.sleep_staff": "Sleep Staff",
+
+  "item.mysticalflames.plus": "Plus",
+  "item.mysticalflames.equal_sign": "Equal Sign",
+
+  "key.category.mysticalflames": "Mystical Flames Mod",
+  "key.mysticalflames.descend": "Dragon Descend",
+  "key.mysticalflames.ascend": "Dragon Ascend"
+
+}

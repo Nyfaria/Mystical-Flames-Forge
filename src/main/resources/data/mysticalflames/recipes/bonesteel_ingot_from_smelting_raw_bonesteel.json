@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "group": "bonesteel_ingot",
+  "ingredient": {
+    "item": "mysticalflames:raw_bonesteel"
+  },
+  "result": "mysticalflames:bonesteel_ingot",
+  "experience": 0.10,
+  "cookingtime": 350
+}

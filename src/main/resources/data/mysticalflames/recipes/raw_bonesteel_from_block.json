@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "raw_bonesteel_block",
+  "ingredients": [
+    {
+      "item": "mysticalflames:raw_bonesteel_block"
+    }
+  ],
+  "result": {
+    "item": "mysticalflames:raw_bonesteel",
+    "count": 9
+  }
+}

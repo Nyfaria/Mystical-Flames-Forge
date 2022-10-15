@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "mysticalflames:hydroptera_nest",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 4576246783,
+
+    "spacing": 30,
+
+    "separation": 15,
+
+    "type": "minecraft:random_spread"
+  }
+}

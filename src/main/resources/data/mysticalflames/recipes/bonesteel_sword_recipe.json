@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    " X ",
+    " # "
+  ],
+  "key": {
+    "X": {
+      "item": "mysticalflames:bonesteel_ingot"
+    },
+    "#": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "mysticalflames:bonesteel_sword",
+    "count": 1
+  }
+}

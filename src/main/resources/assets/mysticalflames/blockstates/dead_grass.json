@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "snowy=false": [
+      {
+        "model": "mysticalflames:block/dead_grass"
+      },
+      {
+        "model": "mysticalflames:block/dead_grass",
+        "y": 90
+      },
+      {
+        "model": "mysticalflames:block/dead_grass",
+        "y": 180
+      },
+      {
+        "model": "mysticalflames:block/dead_grass",
+        "y": 270
+      }
+    ],
+    "snowy=true": {
+      "model": "minecraft:block/grass_block_snow"
+    }
+  }
+}

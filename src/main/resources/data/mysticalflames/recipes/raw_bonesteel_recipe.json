@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "2 "
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:iron_ingot"
+    },
+    "1": {
+      "item": "minecraft:bone"
+    },
+    "2": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "mysticalflames:raw_bonesteel",
+    "count": 1
+  }
+}

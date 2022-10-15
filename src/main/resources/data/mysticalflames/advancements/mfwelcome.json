@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "mysticalflames:eternal_flame_egg"
+    },
+    "title": "Welcome to Mystical Flames!",
+    "description": "You loaded the mod into a new world",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "background": "minecraft:textures/block/stone.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "type": "minecraft:player",
+          "location": {
+            "dimension": "minecraft:overworld"
+          }
+        }
+      }
+    }
+  }
+}

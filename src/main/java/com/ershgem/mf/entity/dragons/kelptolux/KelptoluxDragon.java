@@ -214,7 +214,7 @@ public class KelptoluxDragon extends TamableAnimal implements Saddleable, Flying
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob p_146744_) {
-        return ModEntities.GEM_DRAGON.get().create(serverLevel);
+        return ModEntities.KELPTOLUX.get().create(serverLevel);
     }
 
     /**

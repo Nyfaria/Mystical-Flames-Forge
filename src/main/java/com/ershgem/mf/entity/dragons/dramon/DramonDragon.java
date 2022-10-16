@@ -81,22 +81,22 @@ public class DramonDragon extends TamableAnimal implements Saddleable, FlyingAni
     // animations
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if(this.isFlying()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("flight - Dramon_Model", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("flight.Dramon_Model", true));
             return PlayState.CONTINUE;
         }
         if(this.isVehicle() && event.isMoving() && this.onGround) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("run - Dramon_Model", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("run.Dramon_Model", true));
             return PlayState.CONTINUE;
         }
         if(event.isMoving() && this.onGround) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("walk - Dramon_Model", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("walk.Dramon_Model", true));
             return PlayState.CONTINUE;
         }
         if(this.isInSittingPose() && this.onGround) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("sit - Dramon_Model", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("sit.Dramon_Model", true));
             return PlayState.CONTINUE;
         }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("idle - Dramon_Model", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("idle.Dramon_Model", true));
         return PlayState.CONTINUE;
     }
 
@@ -216,7 +216,7 @@ public class DramonDragon extends TamableAnimal implements Saddleable, FlyingAni
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob p_146744_) {
-        return ModEntities.LYCAN.get().create(serverLevel);
+        return ModEntities.DRAMON.get().create(serverLevel);
     }
 
     /**

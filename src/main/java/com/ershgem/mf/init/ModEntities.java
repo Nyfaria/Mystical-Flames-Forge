@@ -1,6 +1,7 @@
 package com.ershgem.mf.init;
 
 import com.ershgem.mf.MysticalFlames;
+import com.ershgem.mf.entity.dragons.dramon.DramonDragon;
 import com.ershgem.mf.entity.dragons.gem.GemDragon;
 import com.ershgem.mf.entity.dragons.hydroptera.HydropteraDragon;
 import com.ershgem.mf.entity.dragons.kelptolux.KelptoluxDragon;
@@ -38,7 +39,7 @@ public class ModEntities
                     .clientTrackingRange(50)
                     .setShouldReceiveVelocityUpdates(false)
                     .fireImmune()
-                    .build(new ResourceLocation(MysticalFlames.MOD_ID,"gem_dragon").toString()));
+                    .build(new ResourceLocation(MysticalFlames.MOD_ID,"phoenix").toString()));
 
     public static final RegistryObject<EntityType<QueensCrownDragon>> QUEENS_CROWN =
             ENTITIES.register("queens_crown", () -> EntityType.Builder.of(QueensCrownDragon::new, MobCategory.CREATURE)
@@ -46,7 +47,7 @@ public class ModEntities
                     .clientTrackingRange(50)
                     .setShouldReceiveVelocityUpdates(false)
                     .fireImmune()
-                    .build(new ResourceLocation(MysticalFlames.MOD_ID,"gem_dragon").toString()));
+                    .build(new ResourceLocation(MysticalFlames.MOD_ID,"queens_crown").toString()));
 
     public static final RegistryObject<EntityType<LycanDragon>> LYCAN =
             ENTITIES.register("lycan", () -> EntityType.Builder.of(LycanDragon::new, MobCategory.CREATURE)
@@ -54,7 +55,15 @@ public class ModEntities
                     .clientTrackingRange(50)
                     .setShouldReceiveVelocityUpdates(false)
                     .fireImmune()
-                    .build(new ResourceLocation(MysticalFlames.MOD_ID,"gem_dragon").toString()));
+                    .build(new ResourceLocation(MysticalFlames.MOD_ID,"lycan").toString()));
+
+    public static final RegistryObject<EntityType<DramonDragon>> DRAMON =
+            ENTITIES.register("dramon", () -> EntityType.Builder.of(DramonDragon::new, MobCategory.CREATURE)
+                    .sized(1.3f, 2.5f)
+                    .clientTrackingRange(50)
+                    .setShouldReceiveVelocityUpdates(false)
+                    .fireImmune()
+                    .build(new ResourceLocation(MysticalFlames.MOD_ID,"dramon").toString()));
 
     public static final RegistryObject<EntityType<KelptoluxDragon>> KELPTOLUX =
             ENTITIES.register("kelptolux", () -> EntityType.Builder.of(KelptoluxDragon::new, MobCategory.CREATURE)
@@ -62,7 +71,7 @@ public class ModEntities
                     .clientTrackingRange(50)
                     .setShouldReceiveVelocityUpdates(false)
                     .fireImmune()
-                    .build(new ResourceLocation(MysticalFlames.MOD_ID,"gem_dragon").toString()));
+                    .build(new ResourceLocation(MysticalFlames.MOD_ID,"kelptolux").toString()));
 
     public static final RegistryObject<EntityType<HydropteraDragon>> HYDROPTERA =
             ENTITIES.register("hydroptera", () -> EntityType.Builder.of(HydropteraDragon::new, MobCategory.CREATURE)

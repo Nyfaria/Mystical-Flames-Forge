@@ -79,8 +79,16 @@ public class GemDragon extends TamableAnimal implements Saddleable, FlyingAnimal
 
     // animations
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if(this.isFlying()) {
+        if(this.isFlying() && event.isMoving()) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("fly.Gem_Model", true));
+            return PlayState.CONTINUE;
+        }
+        if(this.isFlying()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("hover.Gem_Model", true));
+            return PlayState.CONTINUE;
+        }
+        if (this.xRotO > 20 && this.isFlying()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("dive.Gem_Model", true));
             return PlayState.CONTINUE;
         }
         if(this.isVehicle() && event.isMoving() && this.onGround) {

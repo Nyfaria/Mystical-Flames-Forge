@@ -45,6 +45,6 @@ public class MysticalFlames
 }
 
 //Todo list
-//1. Give Dragons proper AI, allowing it to walk and and fly
-//2. Implement Dragon Hatching, so players can hatch their dragons, and they'll be automatically tamed
-//3. Make dragons harder to tame, unless using an item which allows instant taming
+//1. Make dragons harder to tame
+//2. Add the Deadlands biome
+//3. Add the nests for them, I'll make them once the eggs are in

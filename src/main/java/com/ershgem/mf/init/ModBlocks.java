@@ -3,6 +3,7 @@ package com.ershgem.mf.init;
 import com.ershgem.mf.MysticalFlames;
 import com.ershgem.mf.blocks.deco.GemDragonHead;
 import com.ershgem.mf.blocks.eggs.*;
+import com.ershgem.mf.blocks.hatcheries.EarthHatchery;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;

@@ -4,6 +4,7 @@ import com.ershgem.mf.MysticalFlames;
 import com.ershgem.mf.init.items.ModArmorItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -54,6 +55,9 @@ public class ModItems {
     public static final RegistryObject<ForgeSpawnEggItem> KELPTOLUX_SPAWN = ITEMS.register("kelptolux_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.KELPTOLUX, 0x4da45e, 0xe78495, new Item.Properties().tab(ModCreativeModeTab.MF_SPAWN_EGGS).stacksTo(64)));
 
+    public static final RegistryObject<ForgeSpawnEggItem> DRAMON_SPAWN = ITEMS.register("dramon_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.DRAMON, 0xc04545, 0xd5a3a3, new Item.Properties().tab(ModCreativeModeTab.MF_SPAWN_EGGS).stacksTo(64)));
+
 
     public static final RegistryObject<Item> GEM_SCALE = ITEMS.register("gem_scale",
             () -> new Item (new Item.Properties().tab(ModCreativeModeTab.MF_DRAGONSCALES)));
@@ -75,6 +79,9 @@ public class ModItems {
     public static final RegistryObject<Item> HUNTER_SWORD = ITEMS.register( "hunter_sword",
             () -> new SwordItem(Tiers.DIAMOND,5,6f,
                     new Item.Properties().tab(ModCreativeModeTab.MF_TOOLS)));
+
+    //Hatcheries
+    //public static final RegistryObject<Item> EARTH_HATCHERY = block(ModBlocks.EARTH_HATCHERY, ModCreativeModeTab.MF_BLOCKS);
 
     public static final RegistryObject<Item> BONESTEEL_SWORD = ITEMS.register( "bonesteel_sword",
             () -> new SwordItem(ModTiers.BONESTEEL,5,6f,
@@ -174,5 +181,9 @@ public class ModItems {
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
+    }
+
+    private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
+        return ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
 }

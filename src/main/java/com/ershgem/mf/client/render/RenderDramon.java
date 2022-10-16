@@ -1,7 +1,7 @@
 package com.ershgem.mf.client.render;
 
-import com.ershgem.mf.client.model.PhoenixModel;
-import com.ershgem.mf.entity.dragons.phoenix.PhoenixDragon;
+import com.ershgem.mf.client.model.DramonModel;
+import com.ershgem.mf.entity.dragons.dramon.DramonDragon;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -10,14 +10,14 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
-public class RenderPhoenix extends GeoEntityRenderer<PhoenixDragon>
+public class RenderDramon extends GeoEntityRenderer<DramonDragon>
 {
-    public RenderPhoenix(EntityRendererProvider.Context renderManager) {
-        super(renderManager, new PhoenixModel());
+    public RenderDramon(EntityRendererProvider.Context renderManager) {
+        super(renderManager, new DramonModel());
     }
 
     @Override
-    public RenderType getRenderType(PhoenixDragon animatable, float partialTicks, PoseStack stack,
+    public RenderType getRenderType(DramonDragon animatable, float partialTicks, PoseStack stack,
                                     MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {
         if (animatable.isBaby()) {

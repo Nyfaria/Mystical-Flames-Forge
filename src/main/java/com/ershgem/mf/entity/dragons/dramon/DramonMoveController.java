@@ -1,14 +1,14 @@
-package com.ershgem.mf.entity.dragons.phoenix;
+package com.ershgem.mf.entity.dragons.dramon;
 
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.MoveControl;
 
-public class PhoenixMoveController extends MoveControl
+public class DramonMoveController extends MoveControl
 {
-    private final PhoenixDragon dragon;
+    private final DramonDragon dragon;
 
-    public PhoenixMoveController(PhoenixDragon dragon)
+    public DramonMoveController(DramonDragon dragon)
     {
         super(dragon);
         this.dragon = dragon;

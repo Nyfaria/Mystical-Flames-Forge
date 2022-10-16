@@ -1,4 +1,4 @@
-package com.ershgem.mf.entity.dragons.hydroptera;
+package com.ershgem.mf.entity.dragons.dramon;
 
 import com.ershgem.mf.MFConfig;
 import com.ershgem.mf.init.ModEntities;
@@ -23,6 +23,7 @@ import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.animal.FlyingAnimal;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -42,10 +43,10 @@ import java.util.UUID;
 
 import static net.minecraft.world.entity.ai.attributes.Attributes.*;
 
-public class HydropteraDragon extends TamableAnimal implements Saddleable, FlyingAnimal, PlayerRideableJumping, IAnimatable {
+public class DramonDragon extends TamableAnimal implements Saddleable, FlyingAnimal, PlayerRideableJumping, IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
     // base attributes
-    public static final double BASE_SPEED_GROUND = 0.25F;
+    public static final double BASE_SPEED_GROUND = 0.27F;
     public static final double BASE_SPEED_FLYING = 0.15F;
     public static final double BASE_DAMAGE = 2;
     public static final double BASE_HEALTH = 25;
@@ -54,12 +55,12 @@ public class HydropteraDragon extends TamableAnimal implements Saddleable, Flyin
     public static final int BASE_KB_RESISTANCE = 1;
 
     // data value IDs
-    private static final EntityDataAccessor<String> DATA_BREED = SynchedEntityData.defineId(HydropteraDragon.class, EntityDataSerializers.STRING);
-    private static final EntityDataAccessor<Boolean> DATA_FLYING = SynchedEntityData.defineId(HydropteraDragon.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> DATA_SADDLED = SynchedEntityData.defineId(HydropteraDragon.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Integer> DATA_AGE = SynchedEntityData.defineId(HydropteraDragon.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Boolean> IS_GOINGUP = SynchedEntityData.defineId(HydropteraDragon.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> IS_HOVERING = SynchedEntityData.defineId(HydropteraDragon.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<String> DATA_BREED = SynchedEntityData.defineId(DramonDragon.class, EntityDataSerializers.STRING);
+    private static final EntityDataAccessor<Boolean> DATA_FLYING = SynchedEntityData.defineId(DramonDragon.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> DATA_SADDLED = SynchedEntityData.defineId(DramonDragon.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> DATA_AGE = SynchedEntityData.defineId(DramonDragon.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Boolean> IS_GOINGUP = SynchedEntityData.defineId(DramonDragon.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> IS_HOVERING = SynchedEntityData.defineId(DramonDragon.class, EntityDataSerializers.BOOLEAN);
 
     // data NBT IDs
     public static final String NBT_BREED = "Breed";
@@ -80,38 +81,31 @@ public class HydropteraDragon extends TamableAnimal implements Saddleable, Flyin
     // animations
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if(this.isFlying()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("Fly.Hydroptera_Model", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("flight - Dramon_Model", true));
             return PlayState.CONTINUE;
         }
         if(this.isVehicle() && event.isMoving() && this.onGround) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("Run.Hydroptera_Model", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("run - Dramon_Model", true));
             return PlayState.CONTINUE;
         }
         if(event.isMoving() && this.onGround) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("Walk.Hydroptera_Model", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("walk - Dramon_Model", true));
             return PlayState.CONTINUE;
         }
         if(this.isInSittingPose() && this.onGround) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("Sit.Hydroptera_Model", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("sit - Dramon_Model", true));
             return PlayState.CONTINUE;
         }
-        if(this.isInWater()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("Swim.Hydroptera_Model", true));
-            return PlayState.CONTINUE;
-        }
-        if(this.isInWater() && event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("Swim.Hydroptera_Model", true));
-            return PlayState.CONTINUE;
-        }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("Idle.Hydroptera_Model", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("idle - Dramon_Model", true));
         return PlayState.CONTINUE;
     }
 
-    public HydropteraDragon(EntityType<? extends TamableAnimal> type, Level level) {
+    public DramonDragon(EntityType<? extends TamableAnimal> type, Level level) {
         super(type, level);
         this.maxUpStep = 1;
         this.noCulling = true;
-        this.moveControl = new HydropteraMoveController(this);
+        this.fireImmune();
+        this.moveControl = new DramonMoveController(this);
         this.setTame(false);
     }
 
@@ -144,6 +138,7 @@ public class HydropteraDragon extends TamableAnimal implements Saddleable, Flyin
     @Override
     protected void registerGoals() {
         super.registerGoals();
+        //this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
@@ -221,7 +216,7 @@ public class HydropteraDragon extends TamableAnimal implements Saddleable, Flyin
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob p_146744_) {
-        return ModEntities.HYDROPTERA.get().create(serverLevel);
+        return ModEntities.LYCAN.get().create(serverLevel);
     }
 
     /**
@@ -420,7 +415,7 @@ public class HydropteraDragon extends TamableAnimal implements Saddleable, Flyin
         }
 
         // ride on
-        if (isTamedFor(player) && isSaddled() && !isBaby() && !isFood(stack))
+        if (isTamedFor(player) && !isBaby() && !isFood(stack))
         {
             if (isServer())
             {
@@ -494,7 +489,9 @@ public class HydropteraDragon extends TamableAnimal implements Saddleable, Flyin
     @Override
     public boolean isFood(ItemStack stack)
     {
-        return stack.is(ItemTags.FISHES);
+       // return stack.is(ItemTags.MEA);
+        Item item = stack.getItem();
+        return item.isEdible() && stack.getFoodProperties(this).isMeat();
     }
 
     public void tamedFor(Player player, boolean successful)

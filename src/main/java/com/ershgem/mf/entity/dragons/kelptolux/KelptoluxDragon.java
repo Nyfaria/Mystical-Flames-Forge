@@ -10,7 +10,6 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -143,7 +142,7 @@ public class KelptoluxDragon extends TamableAnimal implements Saddleable, Flying
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.2, false));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, Ingredient.of(ItemTags.FISHES), false));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, Ingredient.of(Items.KELP, Items.DRIED_KELP), false));
     }
 
     @Override
@@ -488,7 +487,7 @@ public class KelptoluxDragon extends TamableAnimal implements Saddleable, Flying
     @Override
     public boolean isFood(ItemStack stack)
     {
-        return stack.is(ItemTags.FISHES);
+        return stack.is(Items.KELP);
     }
 
     public void tamedFor(Player player, boolean successful)

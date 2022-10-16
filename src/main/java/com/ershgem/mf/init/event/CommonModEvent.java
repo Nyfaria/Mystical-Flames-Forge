@@ -1,5 +1,6 @@
 package com.ershgem.mf.init.event;
 
+import com.ershgem.mf.entity.dragons.dramon.DramonDragon;
 import com.ershgem.mf.entity.dragons.gem.GemDragon;
 import com.ershgem.mf.entity.dragons.hydroptera.HydropteraDragon;
 import com.ershgem.mf.entity.dragons.kelptolux.KelptoluxDragon;
@@ -29,5 +30,6 @@ public class CommonModEvent {
         event.put((EntityType)ModEntities.QUEENS_CROWN.get(), QueensCrownDragon.createAttributes().build());
         event.put((EntityType)ModEntities.LYCAN.get(), LycanDragon.createAttributes().build());
         event.put((EntityType)ModEntities.KELPTOLUX.get(), KelptoluxDragon.createAttributes().build());
+        event.put((EntityType)ModEntities.DRAMON.get(), DramonDragon.createAttributes().build());
     }
 }

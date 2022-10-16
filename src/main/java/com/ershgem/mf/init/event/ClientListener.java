@@ -20,6 +20,7 @@ public class ClientListener
             event.registerEntityRenderer(ModEntities.QUEENS_CROWN.get(), RenderQueensCrown::new);
             event.registerEntityRenderer(ModEntities.LYCAN.get(), RenderLycan::new);
             event.registerEntityRenderer(ModEntities.KELPTOLUX.get(), RenderKelptolux::new);
+            event.registerEntityRenderer(ModEntities.DRAMON.get(), RenderDramon::new);
 
     }
 

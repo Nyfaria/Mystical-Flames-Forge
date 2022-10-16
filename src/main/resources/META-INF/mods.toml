@@ -5,7 +5,7 @@ issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/"
 
 [[mods]]
 modId="mysticalflames"
-version="0.0.8.9"
+version="0.1.0"
 displayName="Mystical Flames"
 #updateJSONURL=""
 displayURL="https://gemeersh.wixsite.com/mystical-flames"

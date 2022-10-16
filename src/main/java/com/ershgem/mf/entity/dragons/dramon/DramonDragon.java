@@ -2,6 +2,7 @@ package com.ershgem.mf.entity.dragons.dramon;
 
 import com.ershgem.mf.MFConfig;
 import com.ershgem.mf.init.ModEntities;
+import com.ershgem.mf.init.ModItems;
 import com.ershgem.mf.init.ModKeybinds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -144,7 +145,7 @@ public class DramonDragon extends TamableAnimal implements Saddleable, FlyingAni
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.2, false));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, Ingredient.of(ItemTags.FISHES), false));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, Ingredient.of(ModItems.DRAGON_FLESH.get()), false));
     }
 
     @Override
@@ -489,9 +490,7 @@ public class DramonDragon extends TamableAnimal implements Saddleable, FlyingAni
     @Override
     public boolean isFood(ItemStack stack)
     {
-       // return stack.is(ItemTags.MEA);
-        Item item = stack.getItem();
-        return item.isEdible() && stack.getFoodProperties(this).isMeat();
+        return stack.is(ModItems.DRAGON_FLESH.get());
     }
 
     public void tamedFor(Player player, boolean successful)

@@ -13,7 +13,7 @@ logoFile="logo.png"
 credits="This mod wouldn't have been possible without our amazing Patreon Supporters, without them this mod wouldn't have started, or been able to progress"
 authors="Ersh Gem, Dan, MidnightPony, Derpy, ShadowRogueG, BloodViper2020, JurassicAlien, LemmaEOF, Aurum, MidnightPony, FuriadaNoite, Shinyju, Pharosite" #optional
 description='''
-Mystical Flames is a Minecraft mod, which aims to add a wide variety of dragons, and other mythical creatures to the game'''
+The Mystical Flames mod is a Minecraft mod that adds a variety of dragons and mythical beasts for you to tame, train, and discover for yourself. Tame a devastating wyvern, train a graceful phoenix, defend dragon-kind from the foul dragon hunters, soar through the world on the back of your faithful companion... Your Adventure Awaits!!'''
 
 [[dependencies.mysticalflames]]
     modId="forge"

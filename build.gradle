@@ -20,7 +20,7 @@ apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = "1.18.2-0.1.0"
+version = "1.18.2-0.1.5"
 group = 'com.ershgem.mf'
 archivesBaseName = 'mysticalflames'
 

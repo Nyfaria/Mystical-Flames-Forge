@@ -75,7 +75,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block>  HATCHERY_EARTH = registerBlock("hatchery_earth",
             () -> new EternalFlameEgg(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).noOcclusion()),
-            ModCreativeModeTab.MF_EGGS, 1);
+            ModCreativeModeTab.MF_BLOCKS, 1);
     public static final RegistryObject<Block> GEM_HEAD_BIRCH = registerBlock("gem_head_birch",
             () -> new GemDragonHead(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.WOOD).noOcclusion()),
             ModCreativeModeTab.MF_DECO, 1);

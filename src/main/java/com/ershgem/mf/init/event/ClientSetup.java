@@ -24,6 +24,8 @@ public class ClientSetup {
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_HEAD_SPRUCE.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_HEAD_WARPED.get(), RenderType.cutout());
 
+		//Hatcheries
+
 		//Keybinds
 		ModKeybinds.init();
 	}

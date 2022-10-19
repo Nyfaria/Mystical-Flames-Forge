@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=north": { "model":  "mysticalflames:block/hatchery_earth" },
-    "facing=east": { "model":  "mysticalflames:block/hatchery_earth", "y":  90 },
-    "facing=south": { "model":  "mysticalflames:block/hatchery_earth", "y" : 180 },
-    "facing=west": { "model": "mysticalflames:block/hatchery_earth", "y": 270 }
-  }
-}

@@ -87,7 +87,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> GEM_HEAD_SPRUCE = registerBlock("gem_head_spruce",
             () -> new GemDragonHead(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.WOOD).noOcclusion()),
             ModCreativeModeTab.MF_DECO, 1);
-
     public static final RegistryObject<Block> GEM_HEAD_WARPED = registerBlock("gem_head_warped",
             () -> new GemDragonHead(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.WOOD).noOcclusion()),
             ModCreativeModeTab.MF_DECO, 1);

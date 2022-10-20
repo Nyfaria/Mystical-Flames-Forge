@@ -97,6 +97,10 @@ public class ModBlocks {
             () -> new GemDragonHead(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.WOOD).noOcclusion()),
             ModCreativeModeTab.MF_DECO, 1);
 
+    public static final RegistryObject<Block> EARTH_HATCHERY = registerBlock("earth_hatchery",
+            () -> new GemDragonHead(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.STONE).noOcclusion()),
+            ModCreativeModeTab.MF_BLOCKS, 1);
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab, int stack) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tab, stack);

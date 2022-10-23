@@ -83,6 +83,11 @@
   "block.mysticalflames.gem_head_crimson": "Gem Head Crimson",
 
   "block.mysticalflames.earth_hatchery": "Earth Hatchery",
+  "block.mysticalflames.lava_hatchery": "Lava Hatchery",
+  "block.mysticalflames.air_hatchery": "Air Hatchery",
+  "block.mysticalflames.water_hatchery": "Water Hatchery",
+  "block.mysticalflames.light_hatchery": "Light Hatchery",
+  "block.mysticalflames.dark_hatchery": "Dark Hatchery",
 
   "itemGroup.mysticalflamesitems": "Mystical Flames | Items",
   "itemGroup.mysticalflamestools": "Mystical Flames | Tools",

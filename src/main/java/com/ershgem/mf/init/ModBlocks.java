@@ -4,6 +4,7 @@ import com.ershgem.mf.MysticalFlames;
 import com.ershgem.mf.blocks.deco.GemDragonHead;
 import com.ershgem.mf.blocks.eggs.*;
 import com.ershgem.mf.blocks.hatcheries.EarthHatchery;
+import com.ershgem.mf.blocks.hatcheries.Hatchery;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -102,7 +103,22 @@ public class ModBlocks {
             ModCreativeModeTab.MF_BLOCKS, 1);
 
     public static final RegistryObject<Block> EARTH_HATCHERY = registerBlock("earth_hatchery",
-            () -> new GemDragonHead(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.STONE).noOcclusion()),
+            () -> new Hatchery(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.STONE).noOcclusion()),
+            ModCreativeModeTab.MF_BLOCKS, 1);
+    public static final RegistryObject<Block> LAVA_HATCHERY = registerBlock("lava_hatchery",
+            () -> new Hatchery(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.STONE).noOcclusion()),
+            ModCreativeModeTab.MF_BLOCKS, 1);
+    public static final RegistryObject<Block> LIGHT_HATCHERY = registerBlock("light_hatchery",
+            () -> new Hatchery(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.STONE).noOcclusion()),
+            ModCreativeModeTab.MF_BLOCKS, 1);
+    public static final RegistryObject<Block> DARK_HATCHERY = registerBlock("dark_hatchery",
+            () -> new Hatchery(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.STONE).noOcclusion()),
+            ModCreativeModeTab.MF_BLOCKS, 1);
+    public static final RegistryObject<Block> AIR_HATCHERY = registerBlock("air_hatchery",
+            () -> new Hatchery(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.STONE).noOcclusion()),
+            ModCreativeModeTab.MF_BLOCKS, 1);
+    public static final RegistryObject<Block> WATER_HATCHERY = registerBlock("water_hatchery",
+            () -> new Hatchery(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.STONE).noOcclusion()),
             ModCreativeModeTab.MF_BLOCKS, 1);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab, int stack) {

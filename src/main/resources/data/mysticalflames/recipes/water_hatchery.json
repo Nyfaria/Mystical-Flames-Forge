@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:prismarine"
+    },
+    "1": {
+      "item": "minecraft:hay_block"
+    },
+    "2": {
+      "item": "minecraft:prismarine"
+    },
+    "3": {
+      "item": "minecraft:dark_prismarine"
+    },
+    "4": {
+      "item": "minecraft:water_bucket"
+    },
+    "5": {
+      "item": "minecraft:dark_prismarine"
+    },
+    "6": {
+      "item": "minecraft:prismarine_bricks"
+    },
+    "7": {
+      "item": "minecraft:prismarine_bricks"
+    },
+    "8": {
+      "item": "minecraft:prismarine_bricks"
+    }
+  },
+  "result": {
+    "item": "mysticalflames:water_hatchery",
+    "count": 1
+  }
+}

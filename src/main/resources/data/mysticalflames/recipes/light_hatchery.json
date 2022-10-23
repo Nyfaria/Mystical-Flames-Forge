@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:smooth_quartz"
+    },
+    "1": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "2": {
+      "item": "minecraft:smooth_quartz"
+    },
+    "3": {
+      "item": "minecraft:glowstone"
+    },
+    "4": {
+      "item": "minecraft:hay_block"
+    },
+    "5": {
+      "item": "minecraft:glowstone"
+    },
+    "6": {
+      "item": "minecraft:smooth_quartz"
+    },
+    "7": {
+      "item": "minecraft:smooth_quartz"
+    },
+    "8": {
+      "item": "minecraft:smooth_quartz"
+    }
+  },
+  "result": {
+    "item": "mysticalflames:light_hatchery",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model":  "mysticalflames:block/hydroptera_head_birch" },
+    "facing=east": { "model":  "mysticalflames:block/hydroptera_head_birch", "y":  90 },
+    "facing=south": { "model":  "mysticalflames:block/hydroptera_head_birch", "y" : 180 },
+    "facing=west": { "model": "mysticalflames:block/hydroptera_head_birch", "y": 270 }
+  }
+}

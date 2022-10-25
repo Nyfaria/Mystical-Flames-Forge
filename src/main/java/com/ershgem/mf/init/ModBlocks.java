@@ -2,6 +2,7 @@ package com.ershgem.mf.init;
 
 import com.ershgem.mf.MysticalFlames;
 import com.ershgem.mf.blocks.deco.GemDragonHead;
+import com.ershgem.mf.blocks.deco.HydropteraHead;
 import com.ershgem.mf.blocks.eggs.*;
 import com.ershgem.mf.blocks.hatcheries.EarthHatchery;
 import com.ershgem.mf.blocks.hatcheries.Hatchery;
@@ -96,6 +97,16 @@ public class ModBlocks {
             ModCreativeModeTab.MF_DECO, 1);
     public static final RegistryObject<Block> GEM_HEAD_CRIMSON = registerBlock("gem_head_crimson",
             () -> new GemDragonHead(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.WOOD).noOcclusion()),
+            ModCreativeModeTab.MF_DECO, 1);
+
+    public static final RegistryObject<Block> HYDROPTERA_HEAD_OAK = registerBlock("hydroptera_head_oak",
+            () -> new HydropteraHead(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.WOOD).noOcclusion()),
+            ModCreativeModeTab.MF_DECO, 1);
+    public static final RegistryObject<Block> HYDROPTERA_HEAD_BIRCH = registerBlock("hydroptera_head_birch",
+            () -> new HydropteraHead(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.WOOD).noOcclusion()),
+            ModCreativeModeTab.MF_DECO, 1);
+    public static final RegistryObject<Block> HYDROPTERA_HEAD_SPRUCE = registerBlock("hydroptera_head_spruce",
+            () -> new HydropteraHead(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.WOOD).noOcclusion()),
             ModCreativeModeTab.MF_DECO, 1);
 
     public static final RegistryObject<Block> WOODCUTTER = registerBlock("woodcutter",

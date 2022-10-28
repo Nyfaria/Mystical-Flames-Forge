@@ -1,6 +1,7 @@
 package com.ershgem.mf.init;
 
 import com.ershgem.mf.MysticalFlames;
+import com.ershgem.mf.entity.dragons.Gem2;
 import com.ershgem.mf.entity.dragons.dramon.DramonDragon;
 import com.ershgem.mf.entity.dragons.gem.GemDragon;
 import com.ershgem.mf.entity.dragons.hydroptera.HydropteraDragon;
@@ -25,8 +26,8 @@ public class ModEntities
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, MysticalFlames.MOD_ID);
 
     //Dragons
-    public static final RegistryObject<EntityType<GemDragon>> GEM_DRAGON =
-            ENTITIES.register("gem_dragon", () -> EntityType.Builder.of(GemDragon::new, MobCategory.CREATURE)
+    public static final RegistryObject<EntityType<Gem2>> GEM_DRAGON =
+            ENTITIES.register("gem_dragon", () -> EntityType.Builder.of(Gem2::new, MobCategory.CREATURE)
             		.sized(1.5f, 1.75f)
                     .clientTrackingRange(50)
                     .setShouldReceiveVelocityUpdates(false)

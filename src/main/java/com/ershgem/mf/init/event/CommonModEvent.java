@@ -1,5 +1,6 @@
 package com.ershgem.mf.init.event;
 
+import com.ershgem.mf.entity.dragons.Gem2;
 import com.ershgem.mf.entity.dragons.dramon.DramonDragon;
 import com.ershgem.mf.entity.dragons.gem.GemDragon;
 import com.ershgem.mf.entity.dragons.hydroptera.HydropteraDragon;
@@ -24,7 +25,7 @@ public class CommonModEvent {
 
     @SubscribeEvent
     public static void onAttributeCreate(EntityAttributeCreationEvent event) {
-        event.put((EntityType)ModEntities.GEM_DRAGON.get(), GemDragon.createAttributes().build());
+        event.put((EntityType)ModEntities.GEM_DRAGON.get(), Gem2.createAttributes().build());
         event.put((EntityType)ModEntities.HYDROPTERA.get(), HydropteraDragon.createAttributes().build());
         event.put((EntityType)ModEntities.PHOENIX.get(), PhoenixDragon.createAttributes().build());
         event.put((EntityType)ModEntities.QUEENS_CROWN.get(), QueensCrownDragon.createAttributes().build());

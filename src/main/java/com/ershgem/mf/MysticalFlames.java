@@ -2,6 +2,7 @@ package com.ershgem.mf;
 
 import com.ershgem.mf.init.*;
 import com.ershgem.mf.init.event.ClientSetup;
+import com.ershgem.mf.network.ControlNetwork;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -41,7 +42,9 @@ public class MysticalFlames
         //ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MFConfig.COMMON, "mysticalflames_common.cfg");
         //ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, MFConfig.SERVER, "mysticalflames_server.cfg");
     }
-    private void setup(final FMLCommonSetupEvent event) {}
+    private void setup(final FMLCommonSetupEvent event) {
+        ControlNetwork.init();
+    }
 }
 
 //Todo list

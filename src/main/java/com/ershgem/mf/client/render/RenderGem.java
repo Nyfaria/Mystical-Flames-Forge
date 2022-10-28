@@ -1,6 +1,7 @@
 package com.ershgem.mf.client.render;
 
 import com.ershgem.mf.client.model.GemModel;
+import com.ershgem.mf.entity.dragons.Gem2;
 import com.ershgem.mf.entity.dragons.gem.GemDragon;
 import com.ershgem.mf.util.math.MathX;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -10,19 +11,23 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
+import software.bernie.geckolib3.geo.render.built.GeoBone;
 import software.bernie.geckolib3.geo.render.built.GeoModel;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 import javax.annotation.Nullable;
+import java.util.Optional;
 
-public class RenderGem extends GeoEntityRenderer<GemDragon>
+public class RenderGem extends GeoEntityRenderer<Gem2>
 {
+    protected float currentBodyPitch;
+
     public RenderGem(EntityRendererProvider.Context renderManager) {
         super(renderManager, new GemModel());
     }
 
     @Override
-    public RenderType getRenderType(GemDragon animatable, float partialTicks, PoseStack stack,
+    public RenderType getRenderType(Gem2 animatable, float partialTicks, PoseStack stack,
                                     MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {
         if (animatable.isBaby()) {
@@ -45,15 +50,23 @@ public class RenderGem extends GeoEntityRenderer<GemDragon>
         return "EyeR";
     }
 
-    protected float currentBodyPitch;
+    /**
+     * Get bone also checks if the bone is present
+     *
+     * @return
+     */
+    public Optional<GeoBone> getBone(GeoModel model, String boneString) {
+        Optional<GeoBone> bone = model.getBone(boneString);
+        return bone.isPresent() ? bone : Optional.empty();
+    }
 
     /**
      * This method is used to modify the models of Entities. It gets called between the rotation values thus making it ideal for manipulations that require rotation updates.
      */
-    protected void modifyPitch(GeoModel model, GemDragon dragon, float partialTicks, RenderType type, PoseStack
+    protected void modifyPitch(GeoModel model, Gem2 dragon, float partialTicks, RenderType type, PoseStack
             matrixStackIn, @Nullable MultiBufferSource renderTypeBuffer, @Nullable VertexConsumer vertexBuilder,
                                int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
-        //currentBodyPitch = getBone(model, getMainBodyBone()).get().getRotationX();
+        currentBodyPitch = getBone(model, getMainBodyBone()).get().getRotationX();
 
         // player xRot and geckolib rotations are flipped in negative and positive values
         if (dragon.isFlying()) {
@@ -67,11 +80,11 @@ public class RenderGem extends GeoEntityRenderer<GemDragon>
         } else {
             currentBodyPitch = 0;
         }
-        /*if (!dragon.isGoingUp()) {
+        if (!dragon.isGoingUp()) {
             getBone(model, getMainBodyBone()).get().setRotationX(-currentBodyPitch);
         } else {
             getBone(model, getMainBodyBone()).get().setRotationX(toRadians(getMaxRise()));
-        }*/
+        }
     }
 
     private static final float DEGREES_TO_RADIANS = 0.017453292519943295F;

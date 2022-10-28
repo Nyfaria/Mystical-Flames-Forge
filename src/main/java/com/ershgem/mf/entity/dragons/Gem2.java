@@ -44,26 +44,64 @@ public class Gem2 extends AbstractDragonBase {
 
     // animations
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if(this.isFlying() && event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("fly.Gem_Model", true));
-            return PlayState.CONTINUE;
-        }
-        if(this.isFlying()) {
+       /*if ((isFlying() && isHovering())) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("hover.Gem_Model", true));
             return PlayState.CONTINUE;
         }
-        if (this.xRotO > 20 && this.isFlying()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("dive.Gem_Model", true));
+        if (isFlying() && !isHovering()) {
+            if (this.xRotO < 8 && this.xRotO > -20) {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("fly.Gem_Model", true));
+                return PlayState.CONTINUE;
+            }
+            if (this.xRotO > 12 && this.xRotO < 20 && this.isGoingDown()) {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("dive.Gem_Model", true));
+                return PlayState.CONTINUE;
+            }
+        }*/
+        if ((isFlying() && isHovering())) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("hover.Gem_Model", true)); // hover
             return PlayState.CONTINUE;
         }
-        if(this.isVehicle() && event.isMoving() && this.onGround) {
+        if (isFlying() && !isHovering()) {
+            if (this.xRotO < -20 || isGoingUp()) {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("up.Gem_Model", true)); //flyup
+                return PlayState.CONTINUE;
+            }
+            if (this.xRotO < 8 && this.xRotO > -20) {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("fly.Gem_Model", true)); // fly
+                return PlayState.CONTINUE;
+            }
+            if (this.xRotO > 8 && this.xRotO < 12) { // < 20
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("glide.Gem_Model", true)); // glide
+                return PlayState.CONTINUE;
+            }
+            /*if (this.xRotO > 12 && this.xRotO < 15) { // < 30
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("DeadlyNadderGlideDown", true)); // glidedown
+                return PlayState.CONTINUE;
+            }*/
+            if (this.xRotO > 15) { // > 30
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("dive.Gem_Model", true)); // dive
+                return PlayState.CONTINUE;
+            }
+        }
+        if (event.isMoving()) {
+            if (getTarget() != null && !getTarget().isDeadOrDying() && distanceTo(getTarget()) < 14 || isVehicle()) {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("run.Gem_Model", true));
+                return PlayState.CONTINUE;
+
+            } else {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("Walk.Gem_Model", true));
+                return PlayState.CONTINUE;
+            }
+        }
+        /*if(this.isVehicle() && event.isMoving() && this.onGround) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("run.Gem_Model", true));
             return PlayState.CONTINUE;
         }
         if(event.isMoving() && this.onGround) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("Walk.Gem_Model", true));
             return PlayState.CONTINUE;
-        }
+        }*/
         if(this.isInSittingPose() && this.onGround) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("sit.Gem_Model", true));
             return PlayState.CONTINUE;

@@ -117,6 +117,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> HYDROPTERA_HEAD_ACACIA = registerBlock("hydroptera_head_acacia",
             () -> new HydropteraHead(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.WOOD).noOcclusion()),
             ModCreativeModeTab.MF_DECO, 1);
+    public static final RegistryObject<Block> HYDROPTERA_HEAD_WARPED = registerBlock("hydroptera_head_warped",
+            () -> new HydropteraHead(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.WOOD).noOcclusion()),
+            ModCreativeModeTab.MF_DECO, 1);
+    public static final RegistryObject<Block> HYDROPTERA_HEAD_CRIMSON = registerBlock("hydroptera_head_crimson",
+            () -> new HydropteraHead(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.WOOD).noOcclusion()),
+            ModCreativeModeTab.MF_DECO, 1);
 
     public static final RegistryObject<Block> WOODCUTTER = registerBlock("woodcutter",
             () -> new GemDragonHead(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).sound(SoundType.STONE).noOcclusion()),

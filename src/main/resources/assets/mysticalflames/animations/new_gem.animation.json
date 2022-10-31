@@ -282,7 +282,7 @@
 		},
 		"up.Gem_Model": {
 			"loop": true,
-			"animation_length": 1.04167,
+			"animation_length": 1.0417,
 			"bones": {
 				"Hip_part": {
 					"rotation": {
@@ -559,6 +559,9 @@
 				},
 				"Hip": {
 					"rotation": [-45, 0, 0]
+				},
+				"model": {
+					"position": [0, -8, -6]
 				}
 			}
 		},
@@ -1018,6 +1021,9 @@
 				},
 				"ToesR2": {
 					"rotation": [37.5, 0, 0]
+				},
+				"model": {
+					"position": [0, 1, 0]
 				}
 			}
 		},
@@ -1181,6 +1187,9 @@
 						"1.0": [75, 0, 0],
 						"1.5": [77.5, 0, 0]
 					}
+				},
+				"model": {
+					"position": [0, 3, 2]
 				}
 			}
 		},

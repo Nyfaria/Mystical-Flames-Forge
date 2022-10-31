@@ -85,7 +85,8 @@ public class Gem2 extends AbstractDragonBase {
             }
         }
         if (event.isMoving()) {
-            if (getTarget() != null && !getTarget().isDeadOrDying() && distanceTo(getTarget()) < 14 || isVehicle()) {
+            if (this.isVehicle() && event.isMoving() && this.onGround)
+            /*(getTarget() != null && !getTarget().isDeadOrDying() && distanceTo(getTarget()) < 14 || isVehicle())*/ {
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("run.Gem_Model", true));
                 return PlayState.CONTINUE;
 

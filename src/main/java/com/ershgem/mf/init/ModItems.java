@@ -50,7 +50,7 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.QUEENS_CROWN, 0xd5c38e, 0x6a553c, new Item.Properties().tab(ModCreativeModeTab.MF_SPAWN_EGGS).stacksTo(64)));
 
     public static final RegistryObject<ForgeSpawnEggItem> LYCAN_SPAWN = ITEMS.register("lycan_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.LYCAN, 0x05850, 0xf6e593, new Item.Properties().tab(ModCreativeModeTab.MF_SPAWN_EGGS).stacksTo(64)));
+            () -> new ForgeSpawnEggItem(ModEntities.LYCAN, 0x845743, 0xf6e593, new Item.Properties().tab(ModCreativeModeTab.MF_SPAWN_EGGS).stacksTo(64)));
 
     public static final RegistryObject<ForgeSpawnEggItem> KELPTOLUX_SPAWN = ITEMS.register("kelptolux_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.KELPTOLUX, 0x4da45e, 0xe78495, new Item.Properties().tab(ModCreativeModeTab.MF_SPAWN_EGGS).stacksTo(64)));

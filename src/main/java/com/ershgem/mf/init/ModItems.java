@@ -50,7 +50,7 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.QUEENS_CROWN, 0xd5c38e, 0x6a553c, new Item.Properties().tab(ModCreativeModeTab.MF_SPAWN_EGGS).stacksTo(64)));
 
     public static final RegistryObject<ForgeSpawnEggItem> LYCAN_SPAWN = ITEMS.register("lycan_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.LYCAN, 0x845743, 0xf6e593, new Item.Properties().tab(ModCreativeModeTab.MF_SPAWN_EGGS).stacksTo(64)));
+            () -> new ForgeSpawnEggItem(ModEntities.LYCAN, 0x745a44, 0xf6e593, new Item.Properties().tab(ModCreativeModeTab.MF_SPAWN_EGGS).stacksTo(64)));
 
     public static final RegistryObject<ForgeSpawnEggItem> KELPTOLUX_SPAWN = ITEMS.register("kelptolux_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.KELPTOLUX, 0x4da45e, 0xe78495, new Item.Properties().tab(ModCreativeModeTab.MF_SPAWN_EGGS).stacksTo(64)));
@@ -79,9 +79,6 @@ public class ModItems {
     public static final RegistryObject<Item> HUNTER_SWORD = ITEMS.register( "hunter_sword",
             () -> new SwordItem(Tiers.DIAMOND,5,6f,
                     new Item.Properties().tab(ModCreativeModeTab.MF_TOOLS)));
-
-    //Hatcheries
-    //public static final RegistryObject<Item> EARTH_HATCHERY = block(ModBlocks.EARTH_HATCHERY, ModCreativeModeTab.MF_BLOCKS);
 
     public static final RegistryObject<Item> BONESTEEL_SWORD = ITEMS.register( "bonesteel_sword",
             () -> new SwordItem(ModTiers.BONESTEEL,5,6f,

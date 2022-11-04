@@ -75,10 +75,10 @@ public class Gem2 extends AbstractDragonBase {
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("glide.Gem_Model", true)); // glide
                 return PlayState.CONTINUE;
             }
-            /*if (this.xRotO > 12 && this.xRotO < 15) { // < 30
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("DeadlyNadderGlideDown", true)); // glidedown
+            if (this.xRotO > 12 && this.xRotO < 15) { // < 30
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("dive.Gem_Model", true)); // glidedown
                 return PlayState.CONTINUE;
-            }*/
+            }
             if (this.xRotO > 15) { // > 30
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("dive.Gem_Model", true)); // dive
                 return PlayState.CONTINUE;

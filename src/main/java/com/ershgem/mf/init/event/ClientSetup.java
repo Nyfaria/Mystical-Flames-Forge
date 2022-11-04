@@ -23,8 +23,27 @@ public class ClientSetup {
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_HEAD_JUNGLE.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_HEAD_SPRUCE.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_HEAD_WARPED.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_HEAD_CRIMSON.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.HYDROPTERA_HEAD_OAK.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.HYDROPTERA_HEAD_BIRCH.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.HYDROPTERA_HEAD_SPRUCE.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.HYDROPTERA_HEAD_DARKOAK.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.HYDROPTERA_HEAD_JUNGLE.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.HYDROPTERA_HEAD_ACACIA.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.HYDROPTERA_HEAD_WARPED.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.HYDROPTERA_HEAD_CRIMSON.get(), RenderType.cutout());
+
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.WOODCUTTER.get(), RenderType.cutout());
 
 		//Hatcheries
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.EARTH_HATCHERY.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.LAVA_HATCHERY.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.LIGHT_HATCHERY.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.DARK_HATCHERY.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.AIR_HATCHERY.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.WATER_HATCHERY.get(), RenderType.cutout());
+
 
 		//Keybinds
 		ModKeybinds.init();

@@ -1,7 +1,10 @@
 package com.ershgem.mf.network;
 
 import com.ershgem.mf.MysticalFlames;
-import com.ershgem.mf.network.message.*;
+import com.ershgem.mf.network.message.ControlMessageGoingDown;
+import com.ershgem.mf.network.message.ControlMessageJumping;
+import com.ershgem.mf.network.message.ControlMessageServer;
+import com.ershgem.mf.network.message.DragonRideMessage;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkDirection;

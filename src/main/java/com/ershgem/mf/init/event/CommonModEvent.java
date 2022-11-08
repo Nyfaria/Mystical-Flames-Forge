@@ -1,13 +1,6 @@
 package com.ershgem.mf.init.event;
 
-import com.ershgem.mf.entity.dragons.Gem2;
-import com.ershgem.mf.entity.dragons.dramon.DramonDragon;
-import com.ershgem.mf.entity.dragons.gem.GemDragon;
-import com.ershgem.mf.entity.dragons.hydroptera.HydropteraDragon;
-import com.ershgem.mf.entity.dragons.kelptolux.KelptoluxDragon;
-import com.ershgem.mf.entity.dragons.lycan.LycanDragon;
-import com.ershgem.mf.entity.dragons.phoenix.PhoenixDragon;
-import com.ershgem.mf.entity.dragons.queens_crown.QueensCrownDragon;
+import com.ershgem.mf.entity.dragons.*;
 import com.ershgem.mf.init.ModEntities;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -25,12 +18,13 @@ public class CommonModEvent {
 
     @SubscribeEvent
     public static void onAttributeCreate(EntityAttributeCreationEvent event) {
-        event.put((EntityType)ModEntities.GEM_DRAGON.get(), Gem2.createAttributes().build());
-        event.put((EntityType)ModEntities.HYDROPTERA.get(), HydropteraDragon.createAttributes().build());
-        event.put((EntityType)ModEntities.PHOENIX.get(), PhoenixDragon.createAttributes().build());
-        event.put((EntityType)ModEntities.QUEENS_CROWN.get(), QueensCrownDragon.createAttributes().build());
-        event.put((EntityType)ModEntities.LYCAN.get(), LycanDragon.createAttributes().build());
-        event.put((EntityType)ModEntities.KELPTOLUX.get(), KelptoluxDragon.createAttributes().build());
-        event.put((EntityType)ModEntities.DRAMON.get(), DramonDragon.createAttributes().build());
+        event.put(ModEntities.GEM_DRAGON.get(), EntityGem.createAttributes().build());
+        event.put(ModEntities.HYDROPTERA.get(), EntityHydroptera.createAttributes().build());
+        event.put(ModEntities.PHOENIX.get(), EntityPhoenix.createAttributes().build());
+        event.put(ModEntities.QUEENS_CROWN.get(), EntityQueensCrown.createAttributes().build());
+        event.put(ModEntities.LYCAN.get(), EntityLycan.createAttributes().build());
+        event.put(ModEntities.KELPTOLUX.get(), EntityKelptolux.createAttributes().build());
+        event.put(ModEntities.DRAMON.get(), EntityDramon.createAttributes().build());
+        event.put(ModEntities.ETERNAL_FLAME.get(), EntityEternalFlame.createAttributes().build());
     }
 }

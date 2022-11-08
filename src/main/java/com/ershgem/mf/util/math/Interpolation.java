@@ -1,28 +1,31 @@
 /*
-** 2016 March 05
-**
-** The author disclaims copyright to this source code. In place of
-** a legal notice, here is a blessing:
-**    May you do good and not evil.
-**    May you find forgiveness for yourself and forgive others.
-**    May you share freely, never taking more than you give.
+ ** 2016 March 05
+ **
+ ** The author disclaims copyright to this source code. In place of
+ ** a legal notice, here is a blessing:
+ **    May you do good and not evil.
+ **    May you find forgiveness for yourself and forgive others.
+ **    May you share freely, never taking more than you give.
  */
 package com.ershgem.mf.util.math;
 
 /**
  * Interpolation utility class.
- * 
+ *
  * @author Nico Bergemann <barracuda415 at yahoo.de>
  */
 public class Interpolation {
-    
+
     private static final float[][] CR = {
-        {-0.5f,  1.5f, -1.5f,  0.5f},
-        { 1.0f, -2.5f,  2.0f, -0.5f},
-        {-0.5f,  0.0f,  0.5f,  0.0f},
-        { 0.0f,  1.0f,  0.0f,  0.0f}
+            {-0.5f, 1.5f, -1.5f, 0.5f},
+            {1.0f, -2.5f, 2.0f, -0.5f},
+            {-0.5f, 0.0f, 0.5f, 0.0f},
+            {0.0f, 1.0f, 0.0f, 0.0f}
     };
-    
+
+    private Interpolation() {
+    }
+
     public static float linear(float a, float b, float x) {
         if (x <= 0) {
             return a;
@@ -32,7 +35,7 @@ public class Interpolation {
         }
         return a * (1 - x) + b * x;
     }
-    
+
     public static float smoothStep(float a, float b, float x) {
         if (x <= 0) {
             return a;
@@ -53,7 +56,7 @@ public class Interpolation {
             throw new IllegalArgumentException("Spline has too few knots");
         }
         x = MathX.clamp(x, 0, 0.9999f) * nspans;
-        
+
         int span = (int) x;
         if (span >= nknots - 3) {
             span = nknots - 3;
@@ -77,6 +80,4 @@ public class Interpolation {
             result[i] = ((c3 * x + c2) * x + c1) * x + c0;
         }
     }
-
-    private Interpolation() {}
 }

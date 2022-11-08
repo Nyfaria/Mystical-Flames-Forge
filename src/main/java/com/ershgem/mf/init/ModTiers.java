@@ -7,7 +7,7 @@ import net.minecraftforge.common.ForgeTier;
 public class ModTiers {
     public static final ForgeTier BONESTEEL = new ForgeTier(5, 1500, 5f,
             3f, 10, BlockTags.NEEDS_IRON_TOOL,
-                () -> Ingredient.of(ModItems.BONESTEEL_INGOT.get()));
+            () -> Ingredient.of(ModItems.BONESTEEL_INGOT.get()));
 
     public static final ForgeTier TARRAGON = new ForgeTier(6, 1600, 6f,
             4f, 10, BlockTags.NEEDS_IRON_TOOL,

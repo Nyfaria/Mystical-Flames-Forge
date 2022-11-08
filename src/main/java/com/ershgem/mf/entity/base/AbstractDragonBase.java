@@ -38,8 +38,6 @@ import java.util.List;
 
 public abstract class AbstractDragonBase extends TamableAnimal implements Saddleable, FlyingAnimal, PlayerRideable, IAnimatable {
 
-    BlockPos flightTarget;
-
     private static final EntityDataAccessor<Boolean> DATA_SADDLED = SynchedEntityData.defineId(AbstractDragonBase.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> IS_FLYING = SynchedEntityData.defineId(AbstractDragonBase.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> TICKS_FLY_WANDERING = SynchedEntityData.defineId(AbstractDragonBase.class, EntityDataSerializers.INT);
@@ -48,9 +46,9 @@ public abstract class AbstractDragonBase extends TamableAnimal implements Saddle
     private static final EntityDataAccessor<Boolean> IS_GOINGUP = SynchedEntityData.defineId(AbstractDragonBase.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> IS_GOINDOWN = SynchedEntityData.defineId(AbstractDragonBase.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> IS_HOVERING = SynchedEntityData.defineId(AbstractDragonBase.class, EntityDataSerializers.BOOLEAN);
-
-    private AnimationFactory factory = new AnimationFactory(this);
     private static final String NBT_SADDLED = "Saddle";
+    BlockPos flightTarget;
+    private final AnimationFactory factory = new AnimationFactory(this);
 
     public AbstractDragonBase(EntityType<? extends TamableAnimal> p_21803_, Level p_21804_) {
         super(p_21803_, p_21804_);
@@ -67,6 +65,7 @@ public abstract class AbstractDragonBase extends TamableAnimal implements Saddle
     public float getRideCameraDistanceFront() {
         return getRideCameraDistanceBack();
     }
+
     @OnlyIn(Dist.CLIENT)
     public void updateClientControls() {
         Minecraft mc = Minecraft.getInstance();
@@ -148,8 +147,7 @@ public abstract class AbstractDragonBase extends TamableAnimal implements Saddle
     }
 
     @Override
-    protected void defineSynchedData()
-    {
+    protected void defineSynchedData() {
         super.defineSynchedData();
         entityData.define(DATA_SADDLED, false);
         this.entityData.define(IS_FLYING, false);
@@ -162,15 +160,13 @@ public abstract class AbstractDragonBase extends TamableAnimal implements Saddle
     }
 
     @Override
-    public void onSyncedDataUpdated(EntityDataAccessor<?> data)
-    {
+    public void onSyncedDataUpdated(EntityDataAccessor<?> data) {
         if (DATA_FLAGS_ID.equals(data)) refreshDimensions();
         else super.onSyncedDataUpdated(data);
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag pCompound)
-    {
+    public void addAdditionalSaveData(CompoundTag pCompound) {
         super.addAdditionalSaveData(pCompound);
         pCompound.putBoolean(NBT_SADDLED, isSaddled());
         pCompound.putBoolean("is_flying", this.isFlying());
@@ -183,8 +179,7 @@ public abstract class AbstractDragonBase extends TamableAnimal implements Saddle
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag pCompound)
-    {
+    public void readAdditionalSaveData(CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
         this.setSaddled(pCompound.getBoolean(NBT_SADDLED));
         this.setIsLanding(pCompound.getBoolean("is_landing"));
@@ -204,7 +199,6 @@ public abstract class AbstractDragonBase extends TamableAnimal implements Saddle
     public Entity getControllingPassenger() {
         return this.getFirstPassenger();
     }*/
-
     @Override
     public boolean hurt(DamageSource pSource, float pAmount) {
 //        System.out.println(moveControl);
@@ -410,35 +404,30 @@ public abstract class AbstractDragonBase extends TamableAnimal implements Saddle
     /**
      * Returns true if the dragon is saddled.
      */
-    public boolean isSaddled()
-    {
+    public boolean isSaddled() {
         return entityData.get(DATA_SADDLED);
-    }
-
-    @Override
-    public boolean isSaddleable()
-    {
-        return isAlive() && isTame();
-    }
-
-    @Override
-    public void equipSaddle(@Nullable SoundSource source)
-    {
-        setSaddled(true);
-        level.playSound(null, getX(), getY(), getZ(), SoundEvents.HORSE_SADDLE, getSoundSource(), 1, 1);
     }
 
     /**
      * Set or remove the saddle of the dragon.
      */
-    public void setSaddled(boolean saddled)
-    {
+    public void setSaddled(boolean saddled) {
         entityData.set(DATA_SADDLED, saddled);
     }
 
     @Override
-    public InteractionResult mobInteract(Player player, InteractionHand hand)
-    {
+    public boolean isSaddleable() {
+        return isAlive() && isTame();
+    }
+
+    @Override
+    public void equipSaddle(@Nullable SoundSource source) {
+        setSaddled(true);
+        level.playSound(null, getX(), getY(), getZ(), SoundEvents.HORSE_SADDLE, getSoundSource(), 1, 1);
+    }
+
+    @Override
+    public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
 
         InteractionResult stackResult = stack.interactLivingEntity(player, this, hand);
@@ -447,8 +436,7 @@ public abstract class AbstractDragonBase extends TamableAnimal implements Saddle
         final InteractionResult SUCCESS = InteractionResult.sidedSuccess(level.isClientSide);
 
         // heal
-        if (getHealthRelative() < 1 && isFoodItem(stack))
-        {
+        if (getHealthRelative() < 1 && isFoodItem(stack)) {
             heal(stack.getItem().getFoodProperties().getNutrition());
             playSound(getEatingSound(stack), 0.7f, 1);
             stack.shrink(1);
@@ -464,18 +452,15 @@ public abstract class AbstractDragonBase extends TamableAnimal implements Saddle
         }*/
 
         // tame
-        if (isFood(stack) && !isTame())
-        {
+        if (isFood(stack) && !isTame()) {
             stack.shrink(1);
             if (isServer()) tamedFor(player, getRandom().nextInt(5) == 0);
             return SUCCESS;
         }
 
         // sit!
-        if (this.isTame() && stack.is(Items.STICK))
-        {
-            if (isServer())
-            {
+        if (this.isTame() && stack.is(Items.STICK)) {
+            if (isServer()) {
                 navigation.stop();
                 setOrderedToSit(!isOrderedToSit());
                 if (isOrderedToSit()) setTarget(null);
@@ -484,10 +469,8 @@ public abstract class AbstractDragonBase extends TamableAnimal implements Saddle
         }
 
         // ride on
-        if (isTamedFor(player) && isSaddled() && !isBaby() && !isFood(stack))
-        {
-            if (isServer())
-            {
+        if (isTamedFor(player) && isSaddled() && !isBaby() && !isFood(stack)) {
+            if (isServer()) {
                 setRidingPlayer(player);
                 navigation.stop();
                 setTarget(null);
@@ -503,40 +486,32 @@ public abstract class AbstractDragonBase extends TamableAnimal implements Saddle
     /**
      * Called when a player interacts with a mob. e.g. gets milk from a cow, gets into the saddle on a pig.
      */
-    public boolean isFoodItem(ItemStack stack)
-    {
+    public boolean isFoodItem(ItemStack stack) {
         return stack.getItem().isEdible() && stack.getItem().getFoodProperties().isMeat();
     }
 
     @Override
-    public boolean isFood(ItemStack stack)
-    {
+    public boolean isFood(ItemStack stack) {
         return stack.is(ItemTags.FISHES);
     }
 
-    public void tamedFor(Player player, boolean successful)
-    {
-        if (successful)
-        {
+    public void tamedFor(Player player, boolean successful) {
+        if (successful) {
             setTame(true);
             navigation.stop();
             setTarget(null);
             setOwnerUUID(player.getUUID());
             level.broadcastEntityEvent(this, (byte) 7);
-        }
-        else
-        {
+        } else {
             level.broadcastEntityEvent(this, (byte) 6);
         }
     }
 
-    public boolean isTamedFor(Player player)
-    {
+    public boolean isTamedFor(Player player) {
         return isTame() && isOwnedBy(player);
     }
 
-    public boolean canBeControlledByRider()
-    {
+    public boolean canBeControlledByRider() {
         return getControllingPassenger() instanceof LivingEntity driver && isOwnedBy(driver);
     }
 
@@ -545,14 +520,12 @@ public abstract class AbstractDragonBase extends TamableAnimal implements Saddle
      * Pigs, Horses, and Boats are generally "steered" by the controlling passenger.
      */
     @Override
-    public Entity getControllingPassenger()
-    {
+    public Entity getControllingPassenger() {
         List<Entity> list = getPassengers();
-        return list.isEmpty()? null : list.get(0);
+        return list.isEmpty() ? null : list.get(0);
     }
 
-    public void setRidingPlayer(Player player)
-    {
+    public void setRidingPlayer(Player player) {
         player.setYRot(getYRot());
         player.setXRot(getXRot());
         player.startRiding(this);
@@ -563,14 +536,12 @@ public abstract class AbstractDragonBase extends TamableAnimal implements Saddle
      *
      * @return health normalized between 0 and 1
      */
-    public double getHealthRelative()
-    {
+    public double getHealthRelative() {
         return getHealth() / (double) getMaxHealth();
     }
 
     // simple helper method to determine if we're on the server thread.
-    public boolean isServer()
-    {
+    public boolean isServer() {
         return !level.isClientSide;
     }
 }

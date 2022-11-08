@@ -114,6 +114,7 @@
   "item.mysticalflames.lycan_spawn_egg": "Spawn Lycan Dragon",
   "item.mysticalflames.kelptolux_spawn_egg": "Spawn Kelptolux Dragon",
   "item.mysticalflames.dramon_spawn_egg": "Spawn Dramon Dragon",
+  "item.mysticalflames.eternal_flame_spawn_egg": "Spawn Eternal Flame Dragon",
 
   "entity.mysticalflames.gem_dragon": "Gem Dragon",
   "entity.mysticalflames.hydroptera": "Hydroptera",
@@ -122,6 +123,7 @@
   "entity.mysticalflames.lycan": "Lycan",
   "entity.mysticalflames.kelptolux": "Kelptolux",
   "entity.mysticalflames.dramon": "Dramon",
+  "entity.mysticalflames.eternal_flame": "Eternal Flame",
 
   "item.mysticalflames.sleep_staff": "Sleep Staff",
 

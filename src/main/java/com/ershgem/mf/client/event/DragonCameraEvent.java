@@ -25,7 +25,7 @@ public class DragonCameraEvent {
             f *= 0.1F;
             f1 *= 0.1F;
             f2 *= 0.1F;
-            Vec3 vec3 = position.add((double) f, (double) f1, (double) f2);
+            Vec3 vec3 = position.add(f, f1, f2);
             Vec3 vec31 = new Vec3(position.x - (double) forwards.x() * pStartingDistance + (double) f + (double) f2, position.y - (double) forwards.y() * pStartingDistance + (double) f1, position.z - (double) forwards.z() * pStartingDistance + (double) f2);
             HitResult hitresult = level.clip(new ClipContext(vec3, vec31, ClipContext.Block.VISUAL, ClipContext.Fluid.NONE, entity));
             if (hitresult.getType() != HitResult.Type.MISS) {

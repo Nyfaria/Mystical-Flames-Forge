@@ -17,10 +17,10 @@ import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
 
 @Mod(MysticalFlames.MOD_ID)
-public class MysticalFlames
-{
+public class MysticalFlames {
     public static final String MOD_ID = "mysticalflames";
     public static final Logger LOGGER = LogManager.getLogger();
+
     public MysticalFlames() {
         //Misc
         IEventBus eventbus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -42,6 +42,7 @@ public class MysticalFlames
         //ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MFConfig.COMMON, "mysticalflames_common.cfg");
         //ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, MFConfig.SERVER, "mysticalflames_server.cfg");
     }
+
     private void setup(final FMLCommonSetupEvent event) {
         ControlNetwork.init();
     }

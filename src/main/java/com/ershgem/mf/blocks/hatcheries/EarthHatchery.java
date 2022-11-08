@@ -41,5 +41,4 @@ public class EarthHatchery extends Block {
     }
 
 
-
 }

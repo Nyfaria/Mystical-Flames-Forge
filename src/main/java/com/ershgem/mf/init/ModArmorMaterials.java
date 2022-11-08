@@ -16,7 +16,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
         return Ingredient.of(ModItems.BONESTEEL_INGOT.get());
     }),
     TARRAGON("tarragon", 16, new int[]{4, 5, 7, 5}, 21,
-    SoundEvents.ARMOR_EQUIP_GOLD, 0.0F, 0.0F, () -> {
+            SoundEvents.ARMOR_EQUIP_GOLD, 0.0F, 0.0F, () -> {
         return Ingredient.of(ModItems.BONESTEEL_INGOT.get());
     }),
     SCALEMAIL("scalemail", 16, new int[]{4, 5, 7, 5}, 21,

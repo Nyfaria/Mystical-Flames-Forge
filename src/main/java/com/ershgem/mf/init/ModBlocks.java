@@ -4,7 +4,6 @@ import com.ershgem.mf.MysticalFlames;
 import com.ershgem.mf.blocks.deco.GemDragonHead;
 import com.ershgem.mf.blocks.deco.HydropteraHead;
 import com.ershgem.mf.blocks.eggs.*;
-import com.ershgem.mf.blocks.hatcheries.EarthHatchery;
 import com.ershgem.mf.blocks.hatcheries.Hatchery;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -49,7 +48,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> LYCAN_EGG = registerBlock("lycan_egg",
             () -> new LycanEgg(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).noOcclusion()),
             ModCreativeModeTab.MF_EGGS, 1);
-    public static final RegistryObject<Block>  ETERNAL_FLAME_EGG = registerBlock("eternal_flame_egg",
+    public static final RegistryObject<Block> ETERNAL_FLAME_EGG = registerBlock("eternal_flame_egg",
             () -> new EternalFlameEgg(BlockBehaviour.Properties.of(Material.STONE).strength(0.8f).noOcclusion()),
             ModCreativeModeTab.MF_EGGS, 1);
 
@@ -153,8 +152,7 @@ public class ModBlocks {
         return toReturn;
     }
 
-    private static <T extends Block>RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab, int stack)
-    {
+    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab, int stack) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
                 new Item.Properties().tab(tab).stacksTo(stack)));
     }

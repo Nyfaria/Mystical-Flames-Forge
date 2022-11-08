@@ -1,12 +1,7 @@
 package com.ershgem.mf.entity.dragons;
 
 import com.ershgem.mf.entity.base.AbstractDragonBase;
-import com.ershgem.mf.entity.dragons.gem.GemDragon;
-import com.ershgem.mf.entity.dragons.gem.GemMoveController;
 import com.ershgem.mf.init.ModEntities;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.AgeableMob;
@@ -26,12 +21,9 @@ import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 
-import java.util.UUID;
-
 import static net.minecraft.world.entity.ai.attributes.Attributes.*;
-import static net.minecraft.world.entity.ai.attributes.Attributes.FLYING_SPEED;
 
-public class Gem2 extends AbstractDragonBase {
+public class EntityGem extends AbstractDragonBase {
 
     // base attributes
     public static final double BASE_SPEED_GROUND = 0.27F;
@@ -41,6 +33,24 @@ public class Gem2 extends AbstractDragonBase {
     public static final double BASE_FOLLOW_RANGE = 16;
     public static final double BASE_FOLLOW_RANGE_FLYING = BASE_FOLLOW_RANGE * 2;
     public static final int BASE_KB_RESISTANCE = 1;
+
+    public EntityGem(EntityType<? extends TamableAnimal> p_21803_, Level p_21804_) {
+        super(p_21803_, p_21804_);
+        this.maxUpStep = 1;
+        this.noCulling = true;
+        this.fireImmune();
+        this.setTame(false);
+    }
+
+    public static AttributeSupplier.Builder createAttributes() {
+        return Mob.createMobAttributes()
+                .add(MOVEMENT_SPEED, BASE_SPEED_GROUND)
+                .add(MAX_HEALTH, BASE_HEALTH)
+                .add(ATTACK_DAMAGE, BASE_FOLLOW_RANGE)
+                .add(KNOCKBACK_RESISTANCE, BASE_KB_RESISTANCE)
+                .add(ATTACK_DAMAGE, BASE_DAMAGE)
+                .add(FLYING_SPEED, BASE_SPEED_FLYING);
+    }
 
     // animations
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
@@ -86,7 +96,7 @@ public class Gem2 extends AbstractDragonBase {
         }
         if (event.isMoving()) {
             if (this.isVehicle() && event.isMoving() && this.onGround)
-            /*(getTarget() != null && !getTarget().isDeadOrDying() && distanceTo(getTarget()) < 14 || isVehicle())*/ {
+                /*(getTarget() != null && !getTarget().isDeadOrDying() && distanceTo(getTarget()) < 14 || isVehicle())*/ {
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("run.Gem_Model", true));
                 return PlayState.CONTINUE;
 
@@ -103,31 +113,12 @@ public class Gem2 extends AbstractDragonBase {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("Walk.Gem_Model", true));
             return PlayState.CONTINUE;
         }*/
-        if(this.isInSittingPose() && this.onGround) {
+        if (this.isInSittingPose() && this.onGround) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("sit.Gem_Model", true));
             return PlayState.CONTINUE;
         }
         event.getController().setAnimation(new AnimationBuilder().addAnimation("idle.Gem_Model", true));
         return PlayState.CONTINUE;
-    }
-
-    public Gem2(EntityType<? extends TamableAnimal> p_21803_, Level p_21804_) {
-        super(p_21803_, p_21804_);
-        this.maxUpStep = 1;
-        this.noCulling = true;
-        this.fireImmune();
-        this.setTame(false);
-    }
-
-    public static AttributeSupplier.Builder createAttributes()
-    {
-        return Mob.createMobAttributes()
-                .add(MOVEMENT_SPEED, BASE_SPEED_GROUND)
-                .add(MAX_HEALTH, BASE_HEALTH)
-                .add(ATTACK_DAMAGE, BASE_FOLLOW_RANGE)
-                .add(KNOCKBACK_RESISTANCE, BASE_KB_RESISTANCE)
-                .add(ATTACK_DAMAGE, BASE_DAMAGE)
-                .add(FLYING_SPEED, BASE_SPEED_FLYING);
     }
 
     @Nullable

@@ -3,7 +3,6 @@ package com.ershgem.mf.blocks.deco;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Mirror;
@@ -16,16 +15,8 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.phys.shapes.BooleanOp;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.VoxelShape;
 
-import java.util.Optional;
-import java.util.stream.Stream;
-
-public class GemDragonHead extends Block implements SimpleWaterloggedBlock
-{
+public class GemDragonHead extends Block implements SimpleWaterloggedBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
@@ -62,7 +53,7 @@ public class GemDragonHead extends Block implements SimpleWaterloggedBlock
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        boolean flag = pContext.getLevel().getFluidState(pContext.getClickedPos()).getType() == Fluids.WATER;;
+        boolean flag = pContext.getLevel().getFluidState(pContext.getClickedPos()).getType() == Fluids.WATER;
         return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite())
                 .setValue(WATERLOGGED, flag);
     }

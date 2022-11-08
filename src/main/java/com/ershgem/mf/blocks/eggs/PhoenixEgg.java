@@ -24,17 +24,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class PhoenixEgg extends Block implements SimpleWaterloggedBlock
-{
+public class PhoenixEgg extends Block implements SimpleWaterloggedBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-
-    public PhoenixEgg(Properties properties) {
-        super(properties);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH)
-                .setValue(WATERLOGGED, false));
-    }
-
     //The Bounding Box
     private static final Optional<VoxelShape> SHAPE =
             Stream.of(
@@ -48,6 +40,12 @@ public class PhoenixEgg extends Block implements SimpleWaterloggedBlock
                     Block.box(6, 14, 6, 10, 15, 10)
             ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR));
 
+    public PhoenixEgg(Properties properties) {
+        super(properties);
+        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH)
+                .setValue(WATERLOGGED, false));
+    }
+
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return SHAPE.orElse(Shapes.block());
@@ -55,7 +53,7 @@ public class PhoenixEgg extends Block implements SimpleWaterloggedBlock
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        boolean flag = pContext.getLevel().getFluidState(pContext.getClickedPos()).getType() == Fluids.WATER;;
+        boolean flag = pContext.getLevel().getFluidState(pContext.getClickedPos()).getType() == Fluids.WATER;
         return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite())
                 .setValue(WATERLOGGED, flag);
     }

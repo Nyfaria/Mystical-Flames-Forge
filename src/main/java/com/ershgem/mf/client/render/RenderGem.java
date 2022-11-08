@@ -1,8 +1,7 @@
 package com.ershgem.mf.client.render;
 
 import com.ershgem.mf.client.model.GemModel;
-import com.ershgem.mf.entity.dragons.Gem2;
-import com.ershgem.mf.entity.dragons.gem.GemDragon;
+import com.ershgem.mf.entity.dragons.EntityGem;
 import com.ershgem.mf.util.math.MathX;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -18,16 +17,20 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 import javax.annotation.Nullable;
 import java.util.Optional;
 
-public class RenderGem extends GeoEntityRenderer<Gem2>
-{
+public class RenderGem extends GeoEntityRenderer<EntityGem> {
+    private static final float DEGREES_TO_RADIANS = 0.017453292519943295F;
     protected float currentBodyPitch;
 
     public RenderGem(EntityRendererProvider.Context renderManager) {
         super(renderManager, new GemModel());
     }
 
+    public static float toRadians(float angdeg) {
+        return angdeg * DEGREES_TO_RADIANS;
+    }
+
     @Override
-    public RenderType getRenderType(Gem2 animatable, float partialTicks, PoseStack stack,
+    public RenderType getRenderType(EntityGem animatable, float partialTicks, PoseStack stack,
                                     MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {
         if (animatable.isBaby()) {
@@ -63,7 +66,7 @@ public class RenderGem extends GeoEntityRenderer<Gem2>
     /**
      * This method is used to modify the models of Entities. It gets called between the rotation values thus making it ideal for manipulations that require rotation updates.
      */
-    protected void modifyPitch(GeoModel model, Gem2 dragon, float partialTicks, RenderType type, PoseStack
+    protected void modifyPitch(GeoModel model, EntityGem dragon, float partialTicks, RenderType type, PoseStack
             matrixStackIn, @Nullable MultiBufferSource renderTypeBuffer, @Nullable VertexConsumer vertexBuilder,
                                int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
         currentBodyPitch = getBone(model, getMainBodyBone()).get().getRotationX();
@@ -85,12 +88,6 @@ public class RenderGem extends GeoEntityRenderer<Gem2>
         } else {
             getBone(model, getMainBodyBone()).get().setRotationX(toRadians(getMaxRise()));
         }
-    }
-
-    private static final float DEGREES_TO_RADIANS = 0.017453292519943295F;
-
-    public static float toRadians(float angdeg) {
-        return angdeg * DEGREES_TO_RADIANS;
     }
 
     protected int getMaxRise() {

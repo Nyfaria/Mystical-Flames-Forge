@@ -23,6 +23,7 @@ public class MathX {
 
     public static final double PI_D = Math.PI;
     public static final float PI_F = (float) Math.PI;
+    public final static double MINIMUM_SIGNIFICANT_DIFFERENCE = 1e-3;
     public static boolean useLUT = true;
 
     /**
@@ -170,6 +171,7 @@ public class MathX {
     public static int clamp(int value, int min, int max) {
         return (value < min ? min : (value > max ? max : value));
     }
+
     /**
      * Numeric byte Clamp
      *
@@ -307,8 +309,6 @@ public class MathX {
     public static Vec3 multiply(Vec3 source, double multiplier) {
         return new Vec3(source.x * multiplier, source.y * multiplier, source.z * multiplier);
     }
-
-    public final static double MINIMUM_SIGNIFICANT_DIFFERENCE = 1e-3;
 
     public static boolean isApproximatelyEqual(double x1, double x2) {
         return Math.abs(x1 - x2) <= MINIMUM_SIGNIFICANT_DIFFERENCE;

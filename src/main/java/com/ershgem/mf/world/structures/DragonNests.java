@@ -24,18 +24,6 @@ public class DragonNests extends StructureFeature<JigsawConfiguration> {
         super(JigsawConfiguration.CODEC, DragonNests::createPiecesGenerator, PostPlacementProcessor.NONE);
     }
 
-    /**
-     *        : WARNING!!! DO NOT FORGET THIS METHOD!!!! :
-     * If you do not override step method, your structure WILL crash the biome as it is being parsed!
-     *
-     * Generation step for when to generate the structure. there are 10 stages you can pick from!
-     * This surface structure stage places the structure before plants and ores are generated.
-     */
-    @Override
-    public GenerationStep.Decoration step() {
-        return GenerationStep.Decoration.SURFACE_STRUCTURES;
-    }
-
     /*
      * This is where extra checks can be done to determine if the structure can spawn here.
      * This only needs to be overridden if you're adding additional spawn conditions.
@@ -107,7 +95,7 @@ public class DragonNests extends StructureFeature<JigsawConfiguration> {
          * https://github.com/TelepathicGrunt/RepurposedStructures/blob/1.18.2/src/main/java/com/telepathicgrunt/repurposedstructures/world/structures/pieces/PieceLimitedJigsawManager.java
          */
 
-        if(structurePiecesGenerator.isPresent()) {
+        if (structurePiecesGenerator.isPresent()) {
             // I use to debug and quickly find out if the structure is spawning or not and where it is.
             // This is returning the coordinates of the center starting piece.
             MysticalFlames.LOGGER.log(Level.DEBUG, "Dragon Nests at {}", blockpos);
@@ -115,5 +103,17 @@ public class DragonNests extends StructureFeature<JigsawConfiguration> {
 
         // Return the pieces generator that is now set up so that the game runs it when it needs to create the layout of structure pieces.
         return structurePiecesGenerator;
+    }
+
+    /**
+     * : WARNING!!! DO NOT FORGET THIS METHOD!!!! :
+     * If you do not override step method, your structure WILL crash the biome as it is being parsed!
+     * <p>
+     * Generation step for when to generate the structure. there are 10 stages you can pick from!
+     * This surface structure stage places the structure before plants and ores are generated.
+     */
+    @Override
+    public GenerationStep.Decoration step() {
+        return GenerationStep.Decoration.SURFACE_STRUCTURES;
     }
 }

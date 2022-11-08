@@ -16,8 +16,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 
-public class HydropteraHead extends Block implements SimpleWaterloggedBlock
-{
+public class HydropteraHead extends Block implements SimpleWaterloggedBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
@@ -54,7 +53,7 @@ public class HydropteraHead extends Block implements SimpleWaterloggedBlock
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        boolean flag = pContext.getLevel().getFluidState(pContext.getClickedPos()).getType() == Fluids.WATER;;
+        boolean flag = pContext.getLevel().getFluidState(pContext.getClickedPos()).getType() == Fluids.WATER;
         return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite())
                 .setValue(WATERLOGGED, flag);
     }

@@ -3,8 +3,7 @@ package com.ershgem.mf.init;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
-public class ModCreativeModeTab 
-{
+public class ModCreativeModeTab {
     public static final CreativeModeTab MF_ITEMS = new CreativeModeTab("mysticalflamesitems") {
         @Override
         public ItemStack makeIcon() {

@@ -9,10 +9,6 @@ public class MFConfig {
     static final ForgeConfigSpec SERVER;
 
     private static final ForgeConfigSpec.BooleanValue CAMERA_FLIGHT;
-    public static boolean cameraFlight()
-    {
-        return CAMERA_FLIGHT.get();
-    }
 
     static // common
     {
@@ -36,5 +32,9 @@ public class MFConfig {
                 .define("camera_flight_controls", true);
 
         CLIENT = configurator.build();
+    }
+
+    public static boolean cameraFlight() {
+        return CAMERA_FLIGHT.get();
     }
 }

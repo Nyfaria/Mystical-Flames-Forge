@@ -3,15 +3,16 @@ package com.ershgem.mf.util;
 public class Util {
 
     public static double ticksToDays(double ticks) {
-        double seconds = ticks/20;
+        double seconds = ticks / 20;
         double minutes = seconds / 60;
         double hours = minutes / 60;
-        double days = hours/24;
+        double days = hours / 24;
         return days;
     }
 
     /**
      * Convert ticks to ticks
+     *
      * @param seconds
      * @return
      */
@@ -21,6 +22,7 @@ public class Util {
 
     /**
      * Each minecraft day is 20 minutes
+     *
      * @param minutes
      * @return
      */
@@ -30,6 +32,7 @@ public class Util {
 
     /**
      * Each minecraft day is 20 minutes
+     *
      * @param mcDays
      * @return
      */

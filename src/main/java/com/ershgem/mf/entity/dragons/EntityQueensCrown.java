@@ -79,19 +79,19 @@ public class EntityQueensCrown extends AbstractDragonBase {
         }
         if (event.isMoving()) {
             if (this.isVehicle() && event.isMoving() && this.onGround) {
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("run.Kelptolux_Model", true));
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("run.queenscrown_model", true));
                 return PlayState.CONTINUE;
 
             } else {
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("walk.Kelptolux_Model", true));
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("walk.queenscrown_model", true));
                 return PlayState.CONTINUE;
             }
         }
         if (this.isInSittingPose() && this.onGround) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("sit.Kelptolux_Model", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("sit.queenscrown_model", true));
             return PlayState.CONTINUE;
         }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("idle.Kelptolux_Model", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("idle.queenscrown_model", true));
         return PlayState.CONTINUE;
     }
 

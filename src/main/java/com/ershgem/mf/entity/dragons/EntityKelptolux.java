@@ -2,12 +2,15 @@ package com.ershgem.mf.entity.dragons;
 
 import com.ershgem.mf.entity.base.AbstractDragonBase;
 import com.ershgem.mf.init.ModEntities;
+import com.ershgem.mf.init.ModItems;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
@@ -92,6 +95,11 @@ public class EntityKelptolux extends AbstractDragonBase {
         }
         event.getController().setAnimation(new AnimationBuilder().addAnimation("idle.Kelptolux_Model", true));
         return PlayState.CONTINUE;
+    }
+
+    @Override
+    public boolean isFood(ItemStack stack) {
+        return stack.is(Items.KELP) || stack.is(Items.DRIED_KELP);
     }
 
     @Nullable

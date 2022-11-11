@@ -1,6 +1,7 @@
 package com.ershgem.mf.entity.dragons;
 
 import com.ershgem.mf.entity.base.AbstractDragonBase;
+import com.ershgem.mf.entity.base.SleepingDragoBase;
 import com.ershgem.mf.init.ModEntities;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.ItemTags;
@@ -23,7 +24,7 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 
 import static net.minecraft.world.entity.ai.attributes.Attributes.*;
 
-public class EntityGem extends AbstractDragonBase {
+public class EntityGem extends SleepingDragoBase {
 
     // base attributes
     public static final double BASE_SPEED_GROUND = 0.27F;
@@ -54,20 +55,6 @@ public class EntityGem extends AbstractDragonBase {
 
     // animations
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-       /*if ((isFlying() && isHovering())) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("hover.Gem_Model", true));
-            return PlayState.CONTINUE;
-        }
-        if (isFlying() && !isHovering()) {
-            if (this.xRotO < 8 && this.xRotO > -20) {
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("fly.Gem_Model", true));
-                return PlayState.CONTINUE;
-            }
-            if (this.xRotO > 12 && this.xRotO < 20 && this.isGoingDown()) {
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("dive.Gem_Model", true));
-                return PlayState.CONTINUE;
-            }
-        }*/
         if ((isFlying() && isHovering())) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("hover.Gem_Model", true)); // hover
             return PlayState.CONTINUE;
@@ -105,14 +92,10 @@ public class EntityGem extends AbstractDragonBase {
                 return PlayState.CONTINUE;
             }
         }
-        /*if(this.isVehicle() && event.isMoving() && this.onGround) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("run.Gem_Model", true));
+        if(this.isDragonSleeping()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("sleep.Gem_Model", true));
             return PlayState.CONTINUE;
         }
-        if(event.isMoving() && this.onGround) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("Walk.Gem_Model", true));
-            return PlayState.CONTINUE;
-        }*/
         if (this.isInSittingPose() && this.onGround) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("sit.Gem_Model", true));
             return PlayState.CONTINUE;

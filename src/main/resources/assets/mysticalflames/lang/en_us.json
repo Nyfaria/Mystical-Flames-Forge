@@ -11,10 +11,7 @@
   "item.mysticalflames.bonesteel_chestplate": "Bonesteel Chestplate",
   "item.mysticalflames.bonesteel_leggings": "Bonesteel Leggings",
   "item.mysticalflames.bonesteel_boots": "Bonesteel Boots",
-
-
   "item.mysticalflames.hunter_sword": "Hunter Sword",
-
   "item.mysticalflames.raw_tarragon": "Raw Tarragon",
   "item.mysticalflames.tarragon_ingot": "Tarragon Ingot",
   "item.mysticalflames.tarragon_helmet": "Tarragon Helmet",
@@ -26,7 +23,6 @@
   "item.mysticalflames.tarragon_axe": "Tarragon Axe",
   "item.mysticalflames.tarragon_shovel": "Tarragon Shovel",
   "item.mysticalflames.tarragon_hoe": "Tarragon Hoe",
-
   "item.mysticalflames.scalemail_helmet": "Scalemail Helmet",
   "item.mysticalflames.scalemail_chestplate": "Scalemail Chestplate",
   "item.mysticalflames.scalemail_leggings": "Scalemail Leggings",
@@ -36,24 +32,18 @@
   "item.mysticalflames.scalemail_axe": "Scalemail Axe",
   "item.mysticalflames.scalemail_shovel": "Scalemail Shovel",
   "item.mysticalflames.scalemail_hoe": "Scalemail Hoe",
-
   "item.mysticalflames.pin": "Pin",
-
   "item.mysticalflames.dragon_flesh": "Dragon Flesh",
-
   "item.mysticalflames.green_crystal": "Green Crystal",
   "item.mysticalflames.red_crystal": "Red Crystal",
   "item.mysticalflames.blue_crystal": "Blue Crystal",
-
   "block.mysticalflames.bonesteel_block": "Block of Bonesteel",
   "block.mysticalflames.raw_bonesteel_block": "Block of Raw Bonesteel",
-
   "block.mysticalflames.scale_ore": "Fossilized Scale Ore",
   "block.mysticalflames.dead_grass": "Dead Grass Block",
   "block.mysticalflames.burnt_log": "Burnt Log",
   "block.mysticalflames.burnt_planks": "Burnt Planks",
   "block.mysticalflames.woodcutter": "Woodcutter",
-
   "item.mysticalflames.gem_scale": "Gem Scale",
   "item.mysticalflames.dramon_scale": "Dramon Scale",
   "item.mysticalflames.phoenix_feather": "Phoenix Feather",
@@ -62,7 +52,6 @@
   "item.mysticalflames.kelptolux_scale": "Kelptolux Scale",
   "item.mysticalflames.eternal_flame_scale": "Eternal Flame Scale",
   "item.mysticalflames.queens_crown_scale": "Queen's Crown Scale",
-
   "block.mysticalflames.gem_egg": "Gem Egg",
   "block.mysticalflames.dramon_egg": "Dramon Egg",
   "block.mysticalflames.puppet_egg": "Puppet Egg",
@@ -72,7 +61,6 @@
   "block.mysticalflames.kelptolux_egg": "Kelptolux Egg",
   "block.mysticalflames.lycan_egg": "Lycan Egg",
   "block.mysticalflames.eternal_flame_egg": "Eternal Flame Egg",
-
   "block.mysticalflames.gem_head_birch": "Gem Head Birch",
   "block.mysticalflames.gem_head_oak": "Gem Head Oak",
   "block.mysticalflames.gem_head_dark_oak": "Gem Head Dark Oak",
@@ -81,7 +69,6 @@
   "block.mysticalflames.gem_head_spruce": "Gem Head Spruce",
   "block.mysticalflames.gem_head_warped": "Gem Head Warped",
   "block.mysticalflames.gem_head_crimson": "Gem Head Crimson",
-
   "block.mysticalflames.hydroptera_head_oak": "Hydroptera Head Oak",
   "block.mysticalflames.hydroptera_head_spruce": "Hydroptera Head Spruce",
   "block.mysticalflames.hydroptera_head_birch": "Hydroptera Head Birch",
@@ -90,14 +77,12 @@
   "block.mysticalflames.hydroptera_head_acacia": "Hydroptera Head Acacia",
   "block.mysticalflames.hydroptera_head_warped": "Hydroptera Head Warped",
   "block.mysticalflames.hydroptera_head_crimson": "Hydroptera Head Crimson",
-
   "block.mysticalflames.earth_hatchery": "Earth Hatchery",
   "block.mysticalflames.lava_hatchery": "Lava Hatchery",
   "block.mysticalflames.air_hatchery": "Air Hatchery",
   "block.mysticalflames.water_hatchery": "Water Hatchery",
   "block.mysticalflames.light_hatchery": "Light Hatchery",
   "block.mysticalflames.dark_hatchery": "Dark Hatchery",
-
   "itemGroup.mysticalflamesitems": "Mystical Flames | Items",
   "itemGroup.mysticalflamestools": "Mystical Flames | Tools",
   "itemGroup.mysticalflamesarmor": "Mystical Flames | Armor",
@@ -106,7 +91,6 @@
   "itemGroup.mysticalflamesscales": "Mystical Flames | Dragon Scales",
   "itemGroup.mysticalflamesspawneggs": "Mystical Flames | Spawn Eggs",
   "itemGroup.mysticalflamesdeco": "Mystical Flames | Decoration",
-
   "item.mysticalflames.gem_spawn_egg": "Spawn Gem Dragon",
   "item.mysticalflames.hydroptera_spawn_egg": "Spawn Hydroptera Dragon",
   "item.mysticalflames.phoenix_spawn_egg": "Spawn Phoenix Dragon",
@@ -115,7 +99,6 @@
   "item.mysticalflames.kelptolux_spawn_egg": "Spawn Kelptolux Dragon",
   "item.mysticalflames.dramon_spawn_egg": "Spawn Dramon Dragon",
   "item.mysticalflames.eternal_flame_spawn_egg": "Spawn Eternal Flame Dragon",
-
   "entity.mysticalflames.gem_dragon": "Gem Dragon",
   "entity.mysticalflames.hydroptera": "Hydroptera",
   "entity.mysticalflames.phoenix": "Phoenix",
@@ -124,14 +107,11 @@
   "entity.mysticalflames.kelptolux": "Kelptolux",
   "entity.mysticalflames.dramon": "Dramon",
   "entity.mysticalflames.eternal_flame": "Eternal Flame",
-
   "item.mysticalflames.sleep_staff": "Sleep Staff",
-
   "item.mysticalflames.plus": "Plus",
   "item.mysticalflames.equal_sign": "Equal Sign",
-
+  "mysticalflames.deadland": "Dead Lands",
   "key.category.mysticalflames": "Mystical Flames Mod",
   "key.mysticalflames.descend": "Dragon Descend",
   "key.mysticalflames.ascend": "Dragon Ascend"
-
 }

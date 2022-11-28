@@ -8,13 +8,14 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath 'org.spongepowered:mixingradle:0.7.+'
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
 		//classpath 'org.parchmentmc:librarian:1.+'
         classpath "gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0"
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 //apply plugin: 'org.parchmentmc.librarian.forgegradle'
+apply plugin: 'idea'
 apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'eclipse'
@@ -84,6 +85,7 @@ configurations {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${game_version}-${forge_version}"
+    implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:1.18.2-1.1.0.95')
 	shade fg.deobf('software.bernie.geckolib:geckolib-1.18-forge:3.0.18')
     annotationProcessor "org.spongepowered:mixin:${mixin_processor_version}:processor"
 }

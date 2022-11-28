@@ -3,6 +3,9 @@ package com.ershgem.mf;
 import com.ershgem.mf.init.*;
 import com.ershgem.mf.init.event.ClientSetup;
 import com.ershgem.mf.network.ControlNetwork;
+import com.ershgem.mf.world.biome.MFDefaultRegion;
+import com.ershgem.mf.world.biome.MFSurfaceDataRule;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -15,6 +18,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
+import terrablender.api.Regions;
+import terrablender.api.SurfaceRuleManager;
 
 @Mod(MysticalFlames.MOD_ID)
 public class MysticalFlames {
@@ -45,6 +50,12 @@ public class MysticalFlames {
 
     private void setup(final FMLCommonSetupEvent event) {
         ControlNetwork.init();
+        event.enqueueWork(() ->
+        {
+            Regions.register(new MFDefaultRegion(new ResourceLocation(MOD_ID, "overworld"), 10));
+            // Given we only add two biomes, we should keep our weight relatively low.
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, MFSurfaceDataRule.makeRules());
+        });
     }
 }
 

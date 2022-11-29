@@ -51,7 +51,7 @@ public class EntityHydroptera extends AbstractDragonBase {
     // animations
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if ((isFlying() && isHovering())) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("hover.Hydroptera_Model", true)); // hover
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("Hover.Hydroptera_Model", true)); // hover
             return PlayState.CONTINUE;
         }
         if (isFlying() && !isHovering()) {

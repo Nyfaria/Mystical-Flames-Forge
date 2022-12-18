@@ -5,10 +5,7 @@ import com.ershgem.mf.entity.base.SleepingDragoBase;
 import com.ershgem.mf.init.ModEntities;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
@@ -35,6 +32,7 @@ public class EntityGem extends SleepingDragoBase {
     public static final double BASE_FOLLOW_RANGE_FLYING = BASE_FOLLOW_RANGE * 2;
     public static final int BASE_KB_RESISTANCE = 1;
 
+
     public EntityGem(EntityType<? extends TamableAnimal> p_21803_, Level p_21804_) {
         super(p_21803_, p_21804_);
         this.maxUpStep = 1;
@@ -51,6 +49,34 @@ public class EntityGem extends SleepingDragoBase {
                 .add(KNOCKBACK_RESISTANCE, BASE_KB_RESISTANCE)
                 .add(ATTACK_DAMAGE, BASE_DAMAGE)
                 .add(FLYING_SPEED, BASE_SPEED_FLYING);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        var idle = !this.isInSittingPose() && !this.isFlying() && this.getTarget() == null && !this.isSaddled();
+        if (!this.level.isClientSide) {
+            if (idle && this.level.isNight()) {
+                this.setIsDragonSleeping(true);
+                this.navigation.stop();
+                this.yya = 0;
+            } else if (idle && this.level.isNight() && this.isDragonSleeping()) {
+                this.setIsDragonSleeping(false);
+            }
+            if (this.isDragonSleeping()) {
+                this.ejectPassengers();
+            }
+        }
+
+    }
+
+    @Override
+    protected boolean canRide(Entity p_20339_) {
+        if (this.isDragonSleeping()) {
+            return false;
+        } else {
+            return super.isSaddleable();
+        }
     }
 
     // animations
@@ -92,7 +118,7 @@ public class EntityGem extends SleepingDragoBase {
                 return PlayState.CONTINUE;
             }
         }
-        if(this.isDragonSleeping()) {
+        if (this.isDragonSleeping()) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("sleep.Gem_Model", true));
             return PlayState.CONTINUE;
         }

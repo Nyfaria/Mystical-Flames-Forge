@@ -1,6 +1,7 @@
 package com.ershgem.mf.network.message;
 
 import com.ershgem.mf.entity.base.AbstractDragonBase;
+import com.ershgem.mf.network.ClientPacketHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.Entity;
@@ -37,9 +38,8 @@ public class DragonRideMessage {
         context.enqueueWork(() -> {
             Player player = context.getSender();
             if (context.getDirection().getReceptionSide() == LogicalSide.CLIENT) {
-                player = Minecraft.getInstance().player;
-            }
-            if (player != null) {
+                ClientPacketHandler.rideDragon(message);
+            } else {
                 if (player.level != null) {
                     Entity entity = player.level.getEntity(message.dragonId);
                     if (entity != null && entity instanceof AbstractDragonBase) {
@@ -57,5 +57,13 @@ public class DragonRideMessage {
 
         });
         context.setPacketHandled(true);
+    }
+
+    public int getDragonId() {
+        return dragonId;
+    }
+
+    public boolean isRide() {
+        return ride;
     }
 }
